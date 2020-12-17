@@ -2773,3 +2773,15 @@ ul.breadcrumb li:last-child {
     padding: 10px 12px;
   }
 }
+body {
+  background: url("/image/sascha-yeryomin-DNQ-M93tHmA-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+body {
+  background: url("https://source.unsplash.com/random/1920x1080");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
