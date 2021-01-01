@@ -19,15 +19,15 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="A computer science student pursuing a MASTER degree">
+  <meta name="description" content="Master of Computer Science &#x2F; Software Engineer">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Skara-Brae">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Skara-Brae">
-<meta property="og:description" content="A computer science student pursuing a MASTER degree">
+<meta property="og:description" content="Master of Computer Science &#x2F; Software Engineer">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Yuelin Zhao">
 <meta name="twitter:card" content="summary">
@@ -116,6 +116,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -144,11 +145,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -179,7 +207,7 @@
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Yuelin Zhao</p>
-  <div class="site-description" itemprop="description">A computer science student pursuing a MASTER degree </div>
+  <div class="site-description" itemprop="description">Master of Computer Science / Software Engineer</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -243,7 +271,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="A computer science student pursuing a MASTER degree ">
+      <meta itemprop="description" content="Master of Computer Science / Software Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -334,7 +362,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="A computer science student pursuing a MASTER degree ">
+      <meta itemprop="description" content="Master of Computer Science / Software Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -425,7 +453,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="A computer science student pursuing a MASTER degree ">
+      <meta itemprop="description" content="Master of Computer Science / Software Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -523,7 +551,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="A computer science student pursuing a MASTER degree ">
+      <meta itemprop="description" content="Master of Computer Science / Software Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -707,6 +735,8 @@
 
 
 
+
+  <script src="/js/local-search.js"></script>
 
 
 
