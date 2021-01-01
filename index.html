@@ -129,6 +129,21 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -169,10 +184,23 @@
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives">
+          <a href="/archives/">
+        
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -224,7 +252,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/04/test-my-site/" class="post-title-link" itemprop="url">test_my_site_here</a>
+            <a href="/2020/10/04/test-my-site/" class="post-title-link" itemprop="url">Leetcode Q1 Two Sum</a>
         </h2>
 
         <div class="post-meta-container">
@@ -242,8 +270,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-12-07 15:39:03" itemprop="dateModified" datetime="2020-12-07T15:39:03-07:00">2020-12-07</time>
+        <time title="Modified: 2021-01-01 15:05:44" itemprop="dateModified" datetime="2021-01-01T15:05:44-07:00">2021-01-01</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
 
   
       </div>
@@ -253,7 +290,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>0</span>
+      <span>345</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -271,7 +308,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <pre><code>class Solution
+&#123;
+    public int[] twoSum(int[] nums, int target)
+    &#123;
+        Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
+        for(int i = 0; i &lt; nums.length; i++)
+        &#123;
+            int n = target - nums[i];
+            if(map.containsKey(n))
+            &#123;
+                return new int[] &#123;map.get(n), i&#125;;
+            &#125;
+        map.put(nums[i], i);
+        &#125;
+    throw new IllegalArgumentException(&quot;No two sum solution&quot;);
+    &#125;
+&#125;</code></pre>
+
       
     </div>
 
@@ -431,7 +485,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fas fa-bolt"></i>
   </span>
@@ -442,7 +496,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">0k</span>
+    <span title="Symbols count total">1k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
