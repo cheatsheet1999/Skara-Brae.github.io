@@ -186,7 +186,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,7 +199,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -238,7 +238,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/04/test-my-site/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/01/Leetcode%20Q2%20Add%20Two%20Numbers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -252,7 +252,98 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/04/test-my-site/" class="post-title-link" itemprop="url">Leetcode Q1 Two Sum</a>
+            <a href="/2021/01/01/Leetcode%20Q2%20Add%20Two%20Numbers/" class="post-title-link" itemprop="url">Leetcode Q2 Add Two Numbers</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-01 15:22:26 / Modified: 15:25:56" itemprop="dateCreated datePublished" datetime="2021-01-01T15:22:26-07:00">2021-01-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>930</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val &#x3D; x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public ListNode addTwoNumbers(ListNode l1, ListNode l2)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;initiate new dummyHead, it points to first node</span><br><span class="line">        ListNode dummyHead &#x3D; new ListNode(0);</span><br><span class="line">        &#x2F;&#x2F;ListNode should have p, q, curr</span><br><span class="line">        ListNode p &#x3D; l1, q &#x3D; l2, curr &#x3D; dummyHead;</span><br><span class="line">        &#x2F;&#x2F;Initiate a carry value</span><br><span class="line">        int carry &#x3D; 0;</span><br><span class="line">        while(p !&#x3D; null || q !&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            int x &#x3D; (p !&#x3D; null) ? p.val : 0;</span><br><span class="line">            int y &#x3D; (q !&#x3D; null) ? q.val : 0;</span><br><span class="line">            int sum &#x3D; x + y + carry;</span><br><span class="line">            &#x2F;&#x2F;re-value carry</span><br><span class="line">            carry &#x3D; sum &#x2F; 10;</span><br><span class="line">            &#x2F;&#x2F;curr next node is backward</span><br><span class="line">            curr.next &#x3D; new ListNode(sum % 10);</span><br><span class="line">            curr &#x3D; curr.next;</span><br><span class="line">            if(p !&#x3D; null) p &#x3D; p.next;</span><br><span class="line">            if(q !&#x3D; null) q &#x3D; q.next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(carry &gt; 1)</span><br><span class="line">        &#123;</span><br><span class="line">            curr.next &#x3D; new ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        return dummyHead.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/04/Leetcode%20Q1%20Two%20Sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="A computer science student pursuing a MASTER degree ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/04/Leetcode%20Q1%20Two%20Sum/" class="post-title-link" itemprop="url">Leetcode Q1 Two Sum</a>
         </h2>
 
         <div class="post-meta-container">
@@ -270,7 +361,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-01 15:05:44" itemprop="dateModified" datetime="2021-01-01T15:05:44-07:00">2021-01-01</time>
+        <time title="Modified: 2021-01-01 15:19:38" itemprop="dateModified" datetime="2021-01-01T15:19:38-07:00">2021-01-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -290,7 +381,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>345</span>
+      <span>385</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -308,23 +399,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <pre><code>class Solution
-&#123;
-    public int[] twoSum(int[] nums, int target)
-    &#123;
-        Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
-        for(int i = 0; i &lt; nums.length; i++)
-        &#123;
-            int n = target - nums[i];
-            if(map.containsKey(n))
-            &#123;
-                return new int[] &#123;map.get(n), i&#125;;
-            &#125;
-        map.put(nums[i], i);
-        &#125;
-    throw new IllegalArgumentException(&quot;No two sum solution&quot;);
-    &#125;
-&#125;</code></pre>
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target)</span><br><span class="line">    &#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">        for(int i &#x3D; 0; i &lt; nums.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            int n &#x3D; target - nums[i];</span><br><span class="line">            if(map.containsKey(n))</span><br><span class="line">            &#123;</span><br><span class="line">                return new int[] &#123;map.get(n), i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">    throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -497,7 +573,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">1k</span>
+    <span title="Symbols count total">2k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
