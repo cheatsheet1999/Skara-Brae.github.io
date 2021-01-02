@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Leetcode Q2 Add Two Numbers</title>
-    <url>/2021/01/01/Leetcode%20Q2%20Add%20Two%20Numbers/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val &#x3D; x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public ListNode addTwoNumbers(ListNode l1, ListNode l2)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;initiate new dummyHead, it points to first node</span><br><span class="line">        ListNode dummyHead &#x3D; new ListNode(0);</span><br><span class="line">        &#x2F;&#x2F;ListNode should have p, q, curr</span><br><span class="line">        ListNode p &#x3D; l1, q &#x3D; l2, curr &#x3D; dummyHead;</span><br><span class="line">        &#x2F;&#x2F;Initiate a carry value</span><br><span class="line">        int carry &#x3D; 0;</span><br><span class="line">        while(p !&#x3D; null || q !&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            int x &#x3D; (p !&#x3D; null) ? p.val : 0;</span><br><span class="line">            int y &#x3D; (q !&#x3D; null) ? q.val : 0;</span><br><span class="line">            int sum &#x3D; x + y + carry;</span><br><span class="line">            &#x2F;&#x2F;re-value carry</span><br><span class="line">            carry &#x3D; sum &#x2F; 10;</span><br><span class="line">            &#x2F;&#x2F;curr next node is backward</span><br><span class="line">            curr.next &#x3D; new ListNode(sum % 10);</span><br><span class="line">            curr &#x3D; curr.next;</span><br><span class="line">            if(p !&#x3D; null) p &#x3D; p.next;</span><br><span class="line">            if(q !&#x3D; null) q &#x3D; q.next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(carry &gt; 1)</span><br><span class="line">        &#123;</span><br><span class="line">            curr.next &#x3D; new ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        return dummyHead.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>Leetcode Q3 Longest Substring Without Repeating Characters</title>
+    <url>/2021/01/01/Leetcode-Q3-Longest-Substring-Without-Repeating-Characters/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public int lengthOfLongestSubstring(String s) </span><br><span class="line">    &#123;</span><br><span class="line">        int n &#x3D; s.length(), ans &#x3D; 0;</span><br><span class="line">        Map&lt;Character, Integer&gt; map &#x3D; new HashMap&lt;&gt;();&#x2F;&#x2F; current index of character</span><br><span class="line">        &#x2F;&#x2F; try to extend the range [i, j]</span><br><span class="line">        for(int i &#x3D; 0, j &#x3D; 0; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(map.containsKey(s.charAt(j)))</span><br><span class="line">            &#123;</span><br><span class="line">                i &#x3D; Math.max(map.get(s.charAt(j)), i);</span><br><span class="line">            &#125;</span><br><span class="line">            ans &#x3D; Math.max(ans, j - i + 1);</span><br><span class="line">            map.put(s.charAt(j), j + 1);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Leetcode</category>
       </categories>
       <tags>
-        <tag>LinkedList</tag>
+        <tag>HashMap</tag>
       </tags>
   </entry>
   <entry>
@@ -23,6 +23,18 @@
       </categories>
       <tags>
         <tag>HashMap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Q2 Add Two Numbers</title>
+    <url>/2021/01/01/Leetcode%20Q2%20Add%20Two%20Numbers/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val &#x3D; x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public ListNode addTwoNumbers(ListNode l1, ListNode l2)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;initiate new dummyHead, it points to first node</span><br><span class="line">        ListNode dummyHead &#x3D; new ListNode(0);</span><br><span class="line">        &#x2F;&#x2F;ListNode should have p, q, curr</span><br><span class="line">        ListNode p &#x3D; l1, q &#x3D; l2, curr &#x3D; dummyHead;</span><br><span class="line">        &#x2F;&#x2F;Initiate a carry value</span><br><span class="line">        int carry &#x3D; 0;</span><br><span class="line">        while(p !&#x3D; null || q !&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            int x &#x3D; (p !&#x3D; null) ? p.val : 0;</span><br><span class="line">            int y &#x3D; (q !&#x3D; null) ? q.val : 0;</span><br><span class="line">            int sum &#x3D; x + y + carry;</span><br><span class="line">            &#x2F;&#x2F;re-value carry</span><br><span class="line">            carry &#x3D; sum &#x2F; 10;</span><br><span class="line">            &#x2F;&#x2F;curr next node is backward</span><br><span class="line">            curr.next &#x3D; new ListNode(sum % 10);</span><br><span class="line">            curr &#x3D; curr.next;</span><br><span class="line">            if(p !&#x3D; null) p &#x3D; p.next;</span><br><span class="line">            if(q !&#x3D; null) q &#x3D; q.next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(carry &gt; 1)</span><br><span class="line">        &#123;</span><br><span class="line">            curr.next &#x3D; new ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        return dummyHead.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>LinkedList</tag>
       </tags>
   </entry>
   <entry>
@@ -44,17 +56,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Leetcode Q3 Longest Substring Without Repeating Characters</title>
-    <url>/2021/01/01/Leetcode-Q3-Longest-Substring-Without-Repeating-Characters/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public int lengthOfLongestSubstring(String s) </span><br><span class="line">    &#123;</span><br><span class="line">        int n &#x3D; s.length(), ans &#x3D; 0;</span><br><span class="line">        Map&lt;Character, Integer&gt; map &#x3D; new HashMap&lt;&gt;();&#x2F;&#x2F; current index of character</span><br><span class="line">        &#x2F;&#x2F; try to extend the range [i, j]</span><br><span class="line">        for(int i &#x3D; 0, j &#x3D; 0; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(map.containsKey(s.charAt(j)))</span><br><span class="line">            &#123;</span><br><span class="line">                i &#x3D; Math.max(map.get(s.charAt(j)), i);</span><br><span class="line">            &#125;</span><br><span class="line">            ans &#x3D; Math.max(ans, j - i + 1);</span><br><span class="line">            map.put(s.charAt(j), j + 1);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>HashMap</tag>
-      </tags>
   </entry>
 </search>
