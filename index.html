@@ -219,7 +219,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -263,6 +263,643 @@
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q21-Merge-Two-Sorted-Lists/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/LeetCode-Q21-Merge-Two-Sorted-Lists/" class="post-title-link" itemprop="url">LeetCode Q21 Merge Two Sorted Lists</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-02 02:45:20 / Modified: 02:45:46" itemprop="dateCreated datePublished" datetime="2021-01-02T02:45:20-07:00">2021-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>476</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val &#x3D; x; &#125;</span><br><span class="line"> * </span><br><span class="line"> *&#x2F;</span><br><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public ListNode mergeTwoLists(ListNode l1, ListNode l2) </span><br><span class="line">    &#123;</span><br><span class="line">        if(l1 &#x3D;&#x3D; null) return l2;</span><br><span class="line">        if(l2 &#x3D;&#x3D; null) return l1;</span><br><span class="line">        </span><br><span class="line">        if(l1.val &lt; l2.val)</span><br><span class="line">        &#123;</span><br><span class="line">            l1.next &#x3D; mergeTwoLists(l1.next, l2);</span><br><span class="line">            return l1;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            l2.next &#x3D; mergeTwoLists(l1, l2.next);</span><br><span class="line">            return l2;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q20-Valid-Parentheses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/LeetCode-Q20-Valid-Parentheses/" class="post-title-link" itemprop="url">LeetCode Q20 Valid Parentheses</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-02 02:40:59 / Modified: 02:41:19" itemprop="dateCreated datePublished" datetime="2021-01-02T02:40:59-07:00">2021-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    public boolean isValid(String s)</span><br><span class="line">    &#123;</span><br><span class="line">        Stack&lt;Character&gt; brackets &#x3D; new Stack&lt;Character&gt;();</span><br><span class="line">        for(int i &#x3D; 0; i &lt; s.length(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            char c &#x3D; s.charAt(i);</span><br><span class="line">            switch(c)</span><br><span class="line">            &#123;</span><br><span class="line">                case &#39;(&#39;:</span><br><span class="line">                case &#39;&#123;&#39;:</span><br><span class="line">                case &#39;[&#39;:</span><br><span class="line">                brackets.push(c);</span><br><span class="line">                break;</span><br><span class="line">                    </span><br><span class="line">                case &#39;)&#39;:</span><br><span class="line">                    if(!brackets.empty())</span><br><span class="line">                    &#123;</span><br><span class="line">                        if(brackets.peek() &#x3D;&#x3D; &#39;(&#39;)</span><br><span class="line">                        &#123;</span><br><span class="line">                            brackets.pop();</span><br><span class="line">                        &#125;</span><br><span class="line">                        else</span><br><span class="line">                        &#123;</span><br><span class="line">                            return false;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        return false;</span><br><span class="line">                    &#125;</span><br><span class="line">                    break;</span><br><span class="line">                    </span><br><span class="line">                case &#39;&#125;&#39;:</span><br><span class="line">                    if(!brackets.empty())</span><br><span class="line">                    &#123;</span><br><span class="line">                        if(brackets.peek() &#x3D;&#x3D; &#39;&#123;&#39;)</span><br><span class="line">                        &#123;</span><br><span class="line">                            brackets.pop();</span><br><span class="line">                        &#125;</span><br><span class="line">                        else</span><br><span class="line">                        &#123;</span><br><span class="line">                            return false;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        return false;</span><br><span class="line">                    &#125;</span><br><span class="line">                    break;</span><br><span class="line">                    </span><br><span class="line">                    case &#39;]&#39;:</span><br><span class="line">                    if(!brackets.empty())</span><br><span class="line">                    &#123;</span><br><span class="line">                        if(brackets.peek() &#x3D;&#x3D; &#39;[&#39;)</span><br><span class="line">                        &#123;</span><br><span class="line">                            brackets.pop();</span><br><span class="line">                        &#125;</span><br><span class="line">                        else</span><br><span class="line">                        &#123;</span><br><span class="line">                            return false;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        return false;</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return brackets.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q19-Remove-Nth-Node-From-End-of-List/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/LeetCode-Q19-Remove-Nth-Node-From-End-of-List/" class="post-title-link" itemprop="url">LeetCode Q19 Remove Nth Node From End of List</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-02 02:38:42 / Modified: 02:44:03" itemprop="dateCreated datePublished" datetime="2021-01-02T02:38:42-07:00">2021-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>797</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val &#x3D; x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public ListNode removeNthFromEnd(ListNode head, int n)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;1. create a dummyHead before the real head</span><br><span class="line">        ListNode dummyHead &#x3D; new ListNode(0);</span><br><span class="line">        dummyHead.next &#x3D; head;</span><br><span class="line">        ListNode first &#x3D; head;</span><br><span class="line">        int length &#x3D; 0;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;as long as first is not null, we increase length</span><br><span class="line">        &#x2F;&#x2F;and keep moving first</span><br><span class="line">        while(first !&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            length++;</span><br><span class="line">            first &#x3D; first.next;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;use length - n to locate the node we are going to delete</span><br><span class="line">        length -&#x3D;n;</span><br><span class="line">        first &#x3D; dummyHead;</span><br><span class="line">        while(length &gt; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            length--;</span><br><span class="line">            first &#x3D; first.next;</span><br><span class="line">        &#125;</span><br><span class="line">        first.next &#x3D; first.next.next;</span><br><span class="line">        return dummyHead.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q17-Letter-Combinations-of-a-Phone/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/LeetCode-Q17-Letter-Combinations-of-a-Phone/" class="post-title-link" itemprop="url">LeetCode Q17 Letter Combinations of a Phone</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-02 02:36:22 / Modified: 02:44:18" itemprop="dateCreated datePublished" datetime="2021-01-02T02:36:22-07:00">2021-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">  Map&lt;String, String&gt; phone &#x3D; new HashMap&lt;String, String&gt;() &#123;&#123;</span><br><span class="line">    put(&quot;2&quot;, &quot;abc&quot;);</span><br><span class="line">    put(&quot;3&quot;, &quot;def&quot;);</span><br><span class="line">    put(&quot;4&quot;, &quot;ghi&quot;);</span><br><span class="line">    put(&quot;5&quot;, &quot;jkl&quot;);</span><br><span class="line">    put(&quot;6&quot;, &quot;mno&quot;);</span><br><span class="line">    put(&quot;7&quot;, &quot;pqrs&quot;);</span><br><span class="line">    put(&quot;8&quot;, &quot;tuv&quot;);</span><br><span class="line">    put(&quot;9&quot;, &quot;wxyz&quot;);</span><br><span class="line">  &#125;&#125;;</span><br><span class="line"></span><br><span class="line">  List&lt;String&gt; output &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">  public void backtrack(String combination, String next_digits) &#123;</span><br><span class="line">    &#x2F;&#x2F; if there is no more digits to check</span><br><span class="line">    if (next_digits.length() &#x3D;&#x3D; 0) &#123;</span><br><span class="line">      &#x2F;&#x2F; the combination is done</span><br><span class="line">      output.add(combination);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; if there are still digits to check</span><br><span class="line">    else &#123;</span><br><span class="line">      &#x2F;&#x2F; iterate over all letters which map</span><br><span class="line">      &#x2F;&#x2F; the next available digit</span><br><span class="line">      String digit &#x3D; next_digits.substring(0, 1);</span><br><span class="line">      String letters &#x3D; phone.get(digit);</span><br><span class="line">      for (int i &#x3D; 0; i &lt; letters.length(); i++) &#123;</span><br><span class="line">        String letter &#x3D; phone.get(digit).substring(i, i + 1);</span><br><span class="line">        &#x2F;&#x2F; append the current letter to the combination</span><br><span class="line">        &#x2F;&#x2F; and proceed to the next digits</span><br><span class="line">        &#x2F;&#x2F; letter往后一直移动是因为从a到b,b到c， c到d。。。这样</span><br><span class="line">        backtrack(combination + letter, next_digits.substring(1));</span><br><span class="line">        &#x2F;&#x2F; backtrack(letter + combination, next_digit.substring(1));</span><br><span class="line">&#x2F;&#x2F;Output [&quot;da&quot;,&quot;ea&quot;,&quot;fa&quot;,&quot;db&quot;,&quot;eb&quot;,&quot;fb&quot;,&quot;dc&quot;,&quot;ec&quot;,&quot;fc&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public List&lt;String&gt; letterCombinations(String digits) &#123;</span><br><span class="line">    if (digits.length() !&#x3D; 0)</span><br><span class="line">      backtrack(&quot;&quot;, digits);</span><br><span class="line">    return output;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q12-3-sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/LeetCode-Q12-3-sum/" class="post-title-link" itemprop="url">LeetCode Q12 3 sum</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-02 02:35:01 / Modified: 02:44:38" itemprop="dateCreated datePublished" datetime="2021-01-02T02:35:01-07:00">2021-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>947</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; threeSum(int[] nums)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;1.Sort array</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        &#x2F;&#x2F;2. Creat a double Linkedlist</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res &#x3D; new LinkedList&lt;&gt;();</span><br><span class="line">        for(int i &#x3D; 0; i &lt; nums.length - 2; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;3. if i &#x3D; 0 or the 2nd number is not equal to previous number</span><br><span class="line">            &#x2F;&#x2F;为了保证不加入重复的 list,因为是有序的，所以如果和前一个元素相同，只需要继续后移就可以</span><br><span class="line">            if(i &#x3D;&#x3D; 0 || (i &gt; 0 &amp;&amp; nums[i] !&#x3D; nums[i - 1]))</span><br><span class="line">            &#123;</span><br><span class="line">                 &#x2F;&#x2F;两个指针,并且头指针从i + 1开始，防止加入重复的元素</span><br><span class="line">                int lo &#x3D; i + 1, hi &#x3D; nums.length - 1, sum &#x3D; 0 - nums[i];</span><br><span class="line">                while(lo &lt; hi)</span><br><span class="line">                &#123;</span><br><span class="line">                    if(nums[lo] + nums[hi] &#x3D;&#x3D; sum)</span><br><span class="line">                    &#123;</span><br><span class="line">                        res.add(Arrays.asList(nums[i], nums[lo], nums[hi]));</span><br><span class="line">                        while(lo &lt; hi &amp;&amp; nums[lo] &#x3D;&#x3D; nums[lo + 1]) lo++;</span><br><span class="line">                        while(lo &lt; hi &amp;&amp; nums[hi] &#x3D;&#x3D; nums[hi - 1]) hi--;</span><br><span class="line">                        lo++;</span><br><span class="line">                        hi--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else if(nums[lo] + nums[hi] &lt; sum) lo++;</span><br><span class="line">                    else hi--;</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q11-Container-With-Most-Water/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/LeetCode-Q11-Container-With-Most-Water/" class="post-title-link" itemprop="url">LeetCode Q11 Container With Most Water</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-02 02:33:35 / Modified: 02:34:15" itemprop="dateCreated datePublished" datetime="2021-01-02T02:33:35-07:00">2021-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>409</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public int maxArea(int[] height)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;initialize area, most left side and right side</span><br><span class="line">       int area &#x3D; 0, l &#x3D; 0, r &#x3D; height.length - 1;</span><br><span class="line">        &#x2F;&#x2F;as long as left is on the &quot;left&quot;</span><br><span class="line">        while(l &lt; r)</span><br><span class="line">        &#123;</span><br><span class="line">            area &#x3D; Math.max(area, Math.min(height[l], height[r]) * (r - l));</span><br><span class="line">            if(height[l] &lt; height[r])</span><br><span class="line">            &#123;</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return area;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q5-Longest-Palindromic-Substring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/LeetCode-Q5-Longest-Palindromic-Substring/" class="post-title-link" itemprop="url">LeetCode Q5 Longest Palindromic Substring</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-02 02:31:39 / Modified: 02:32:36" itemprop="dateCreated datePublished" datetime="2021-01-02T02:31:39-07:00">2021-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>705</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public String longestPalindrome(String s)</span><br><span class="line">    &#123;</span><br><span class="line">        if(s &#x3D;&#x3D; null || s.length() &lt; 1) return &quot;&quot;;</span><br><span class="line">        int start &#x3D; 0, end &#x3D; 0;</span><br><span class="line">        for(int i &#x3D; 0; i &lt; s.length(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            int len1 &#x3D; expandAroundCenter(s, i, i);</span><br><span class="line">            int len2 &#x3D; expandAroundCenter(s, i, i + 1);</span><br><span class="line">            int len &#x3D; Math.max(len1, len2);</span><br><span class="line">            if(len &gt; end - start)</span><br><span class="line">            &#123;</span><br><span class="line">                start &#x3D; i - (len-1)&#x2F;2;</span><br><span class="line">                end &#x3D; i + len&#x2F;2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return s.substring(start, end + 1);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private int expandAroundCenter(String s, int left, int right)</span><br><span class="line">    &#123;</span><br><span class="line">        int L &#x3D; left, R &#x3D; right;</span><br><span class="line">        while(L &gt;&#x3D; 0 &amp;&amp; R &lt; s.length() &amp;&amp; s.charAt(L) &#x3D;&#x3D; s.charAt(R))</span><br><span class="line">        &#123;</span><br><span class="line">            L--;</span><br><span class="line">            R++;</span><br><span class="line">        &#125;</span><br><span class="line">        return R - L - 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">          </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -543,120 +1180,11 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/04/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Skara-Brae">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/04/hello-world/" class="post-title-link" itemprop="url">Markdown Grammar / Web Delopyment</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-10-04 23:10:29" itemprop="dateCreated datePublished" datetime="2020-10-04T23:10:29-07:00">2020-10-04</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-01 19:25:15" itemprop="dateModified" datetime="2021-01-01T19:25:15-07:00">2021-01-01</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Web-Note/" itemprop="url" rel="index"><span itemprop="name">Web Note</span></a>
-        </span>
-    </span>
 
   
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>340</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. </p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<h3 id="Generate-with-Debugger"><a href="#Generate-with-Debugger" class="headerlink" title="Generate with Debugger"></a>Generate with Debugger</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s --debug</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="Frequently-Used-Color"><a href="#Frequently-Used-Color" class="headerlink" title="Frequently Used Color"></a>Frequently Used Color</h3><p><font size=5 color="#3cff00"> Set Color and Font</font><br><font size=5 color="#0048ff"> Set Color and Font</font><br><font size=5 color="#c800ff"> Set Color and Font</font></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -707,13 +1235,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">2k</span>
+    <span title="Symbols count total">8k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2 mins.</span>
+    <span title="Reading time total">7 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
