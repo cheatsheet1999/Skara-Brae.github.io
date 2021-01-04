@@ -932,10 +932,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-01-01 15:27:02 / Modified: 19:24:51" itemprop="dateCreated datePublished" datetime="2021-01-01T15:27:02-07:00">2021-01-01</time>
+      <time title="Created: 2021-01-01 15:27:02" itemprop="dateCreated datePublished" datetime="2021-01-01T15:27:02-07:00">2021-01-01</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-03 21:03:17" itemprop="dateModified" datetime="2021-01-03T21:03:17-07:00">2021-01-03</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -954,7 +960,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>467</span>
+      <span>1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -972,7 +978,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public int lengthOfLongestSubstring(String s) </span><br><span class="line">    &#123;</span><br><span class="line">        int n &#x3D; s.length(), ans &#x3D; 0;</span><br><span class="line">        Map&lt;Character, Integer&gt; map &#x3D; new HashMap&lt;&gt;();&#x2F;&#x2F; current index of character</span><br><span class="line">        &#x2F;&#x2F; try to extend the range [i, j]</span><br><span class="line">        for(int i &#x3D; 0, j &#x3D; 0; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(map.containsKey(s.charAt(j)))</span><br><span class="line">            &#123;</span><br><span class="line">                i &#x3D; Math.max(map.get(s.charAt(j)), i);</span><br><span class="line">            &#125;</span><br><span class="line">            ans &#x3D; Math.max(ans, j - i + 1);</span><br><span class="line">            map.put(s.charAt(j), j + 1);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public int lengthOfLongestSubstring(String s) </span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; s: &quot;abcabcbb&quot;</span><br><span class="line">        </span><br><span class="line">        HashMap&lt;Character, Integer&gt; map &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">        &#x2F;&#x2F; s: &quot;abcabcbb&quot;</span><br><span class="line">           map: &#123;&#125; </span><br><span class="line">        </span><br><span class="line">        int ans &#x3D; 0;</span><br><span class="line">        &#x2F;&#x2F; s: &quot;abcabcbb&quot;</span><br><span class="line">           map: &#123;&#125;</span><br><span class="line">           ans: 0</span><br><span class="line">        </span><br><span class="line">        for(int i &#x3D; 0, j &#x3D; 0; j &lt; s.length(); j++)</span><br><span class="line">        &#123;</span><br><span class="line">        &#x2F;*</span><br><span class="line">        s: &quot;abcabcbb&quot;</span><br><span class="line">        map: &#123;&#125;</span><br><span class="line">        ans: 0</span><br><span class="line">        i: 0</span><br><span class="line">        j: 0</span><br><span class="line">        *&#x2F;</span><br><span class="line">            if(map.containsKey(s.charAt(j)))</span><br><span class="line">            &#123;</span><br><span class="line">                i &#x3D; Math.max(map.get(s.charAt(j)), i);</span><br><span class="line">            &#125;</span><br><span class="line">            ans &#x3D; Math.max(ans, j - i + 1);</span><br><span class="line">            &#x2F;*</span><br><span class="line">            s: &quot;abcabcbb&quot;</span><br><span class="line">            map: &#123;&#125;</span><br><span class="line">            ans: 1</span><br><span class="line">            i: 0</span><br><span class="line">            j: 0</span><br><span class="line">            *&#x2F;</span><br><span class="line">            </span><br><span class="line">            map.put(s.charAt(j), j + 1);</span><br><span class="line">            &#x2F;*</span><br><span class="line">            s: &quot;abcabcbb&quot;</span><br><span class="line">            map: &#123;&quot;a&quot;:1&#125;</span><br><span class="line">            ans: 1</span><br><span class="line">            i: 0</span><br><span class="line">            j: 0</span><br><span class="line">            *&#x2F;</span><br><span class="line">            </span><br><span class="line">            &#x2F;*</span><br><span class="line">            Second round</span><br><span class="line">            s: &quot;abcabcbb&quot;</span><br><span class="line">            map: &#123;&quot;a&quot;:1,&quot;b&quot;:2&#125;</span><br><span class="line">            ans: 2</span><br><span class="line">            i: 0</span><br><span class="line">            j: 1</span><br><span class="line">            *&#x2F;</span><br><span class="line">            </span><br><span class="line">            &#x2F;*</span><br><span class="line">            s: &quot;abcabcbb&quot;</span><br><span class="line">            map: &#123;&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3&#125;</span><br><span class="line">            ans: 3</span><br><span class="line">            i: 0</span><br><span class="line">            j: 2</span><br><span class="line">            *&#x2F;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1235,13 +1241,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">8k</span>
+    <span title="Symbols count total">9k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">7 mins.</span>
+    <span title="Reading time total">8 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
