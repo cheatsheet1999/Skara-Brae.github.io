@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="1234567891011121314151617181920212223242526272829&#x2F;** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNode next; *     ListNode(int x) &amp;#123; val &amp;#x3D">
+  <meta name="description" content="Merge two sorted linked lists and return it as a sorted list. The list should be made by splicing together the nodes of the first two lists. Input: l1 &#x3D; [1,2,4], l2 &#x3D; [1,3,4]Output: [1,1,2,3,4,4]Examp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Q21 Merge Two Sorted Lists">
 <meta property="og:url" content="http://example.com/2021/01/02/LeetCode-Q21-Merge-Two-Sorted-Lists/index.html">
 <meta property="og:site_name" content="Skara-Brae">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829&#x2F;** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNode next; *     ListNode(int x) &amp;#123; val &amp;#x3D">
+<meta property="og:description" content="Merge two sorted linked lists and return it as a sorted list. The list should be made by splicing together the nodes of the first two lists. Input: l1 &#x3D; [1,2,4], l2 &#x3D; [1,3,4]Output: [1,1,2,3,4,4]Examp">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-02T09:45:20.000Z">
-<meta property="article:modified_time" content="2021-01-02T09:45:46.174Z">
+<meta property="article:modified_time" content="2021-01-05T05:58:15.664Z">
 <meta property="article:author" content="Yuelin Zhao">
 <meta name="twitter:card" content="summary">
 
@@ -221,7 +221,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -234,7 +234,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -244,7 +244,7 @@
         <a href="https://github.com/Skara-Brae" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Skara-Brae" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i>WeChat</a>
+        <a href="/images/yuelinwechat.jpg" title="WeChat → &#x2F;images&#x2F;yuelinwechat.jpg"><i class="fab fa-weixin fa-fw"></i>WeChat</a>
       </span>
   </div>
 
@@ -305,10 +305,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-01-02 02:45:20 / Modified: 02:45:46" itemprop="dateCreated datePublished" datetime="2021-01-02T02:45:20-07:00">2021-01-02</time>
+      <time title="Created: 2021-01-02 02:45:20" itemprop="dateCreated datePublished" datetime="2021-01-02T02:45:20-07:00">2021-01-02</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-04 22:58:15" itemprop="dateModified" datetime="2021-01-04T22:58:15-07:00">2021-01-04</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -334,7 +340,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>476</span>
+      <span>709</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -352,7 +358,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val &#x3D; x; &#125;</span><br><span class="line"> * </span><br><span class="line"> *&#x2F;</span><br><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public ListNode mergeTwoLists(ListNode l1, ListNode l2) </span><br><span class="line">    &#123;</span><br><span class="line">        if(l1 &#x3D;&#x3D; null) return l2;</span><br><span class="line">        if(l2 &#x3D;&#x3D; null) return l1;</span><br><span class="line">        </span><br><span class="line">        if(l1.val &lt; l2.val)</span><br><span class="line">        &#123;</span><br><span class="line">            l1.next &#x3D; mergeTwoLists(l1.next, l2);</span><br><span class="line">            return l1;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            l2.next &#x3D; mergeTwoLists(l1, l2.next);</span><br><span class="line">            return l2;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>Merge two sorted linked lists and return it as a sorted list. The list should be made by splicing together the nodes of the first two lists.</p>
+<p>Input: l1 = [1,2,4], l2 = [1,3,4]<br>Output: [1,1,2,3,4,4]<br>Example 2:</p>
+<p>Input: l1 = [], l2 = []<br>Output: []<br>Example 3:</p>
+<p>Input: l1 = [], l2 = [0]<br>Output: [0]</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val &#x3D; x; &#125;</span><br><span class="line"> * </span><br><span class="line"> *&#x2F;</span><br><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public ListNode mergeTwoLists(ListNode l1, ListNode l2) </span><br><span class="line">    &#123;</span><br><span class="line">        if(l1 &#x3D;&#x3D; null) return l2;</span><br><span class="line">        if(l2 &#x3D;&#x3D; null) return l1;</span><br><span class="line">        </span><br><span class="line">        if(l1.val &lt; l2.val)</span><br><span class="line">        &#123;</span><br><span class="line">            l1.next &#x3D; mergeTwoLists(l1.next, l2);</span><br><span class="line">            return l1;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            l2.next &#x3D; mergeTwoLists(l1, l2.next);</span><br><span class="line">            return l2;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -366,8 +377,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/01/02/LeetCode-Q20-Valid-Parentheses/" rel="prev" title="LeetCode Q20 Valid Parentheses">
-                  <i class="fa fa-chevron-left"></i> LeetCode Q20 Valid Parentheses
+                <a href="/2021/01/02/LeetCode-Q22-Generate%20Parentheses/" rel="prev" title="LeetCode Q22 Generate Parentheses">
+                  <i class="fa fa-chevron-left"></i> LeetCode Q22 Generate Parentheses
                 </a>
             </div>
             <div class="post-nav-item">
@@ -432,13 +443,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">18k</span>
+    <span title="Symbols count total">19k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">16 mins.</span>
+    <span title="Reading time total">17 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
