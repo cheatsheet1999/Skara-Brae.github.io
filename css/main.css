@@ -2891,5 +2891,6 @@ body {
   background: url("/images/engin-akyurt-AtO9tWVD1so-unsplash.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 50%;
+  background-size: cover;
+  background-position: 100% 100%;
 }
