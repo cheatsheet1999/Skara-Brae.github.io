@@ -247,4 +247,24 @@
         <tag>Binary Search</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Info Assurance &amp; Security Lecture 1</title>
+    <url>/2021/01/11/CSE543-Lecture1/</url>
+    <content><![CDATA[<p>In this class, we cover comprehensive knowledge. Information assurance is not only cyber security, it also comtains management, operation. Information quality is also part of info assurance.</p>
+<a id="more"></a>
+
+<p>Compute science &amp; Computer engineering difference</p>
+<ol>
+<li>science is discovery of knowledge, including how to do things : integrate circuit</li>
+<li>computer engineering is very broad, but based on network, embedded. CS cover software, algorithm, computation, data.</li>
+</ol>
+<p><strong>Interms of content, this two are close.</strong></p>
+]]></content>
+      <categories>
+        <category>Info Assurance &amp; Security</category>
+      </categories>
+      <tags>
+        <tag>Security</tag>
+      </tags>
+  </entry>
 </search>
