@@ -264,7 +264,88 @@
         <category>Info Assurance &amp; Security</category>
       </categories>
       <tags>
-        <tag>Security</tag>
+        <tag>CSE543</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Software Analysis and Design Lecture 1</title>
+    <url>/2021/01/11/Software-Analysis-and-Design-Lecture-1/</url>
+    <content><![CDATA[<h3 id="Course-Description"><a href="#Course-Description" class="headerlink" title="Course Description:"></a>Course Description:</h3><p>This course introduces requirements analysis and design, software architecture and software patterns, representations of software, formal methods, and component-based development.</p>
+<a id="more"></a>
+
+<p>Synchronous learning means <strong>live lectures</strong> with in-person instruction. Online course are recorded videos.</p>
+<h3 id="Main-Topic"><a href="#Main-Topic" class="headerlink" title="Main Topic"></a>Main Topic</h3><ol>
+<li>Requirements</li>
+<li>Modeling or Design</li>
+<li>Programming</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Software Analysis and Design</category>
+      </categories>
+      <tags>
+        <tag>CSE460</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multimedia Information Systems Lecture 1</title>
+    <url>/2021/01/12/CSE408-Lecture-1/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Multimedia Information Systems</category>
+      </categories>
+      <tags>
+        <tag>CSE408</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java basic 1</title>
+    <url>/2021/01/11/Java-basic-1/</url>
+    <content><![CDATA[<h3 id="Array-copy"><a href="#Array-copy" class="headerlink" title="Array copy"></a>Array copy</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">int[] array1, array2;</span><br><span class="line">array1 = new int[] &#123;2,3,5,7,8,9,12,11,10&#125;;</span><br><span class="line"></span><br><span class="line">//copy array1 to array2</span><br><span class="line">array2 = new int[array1.length];</span><br><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; array2.length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    array2[i] = array1[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们通过new的方式，给array2在heap空间中开辟了新的数组空间，将array1数组的元素值一个个的copy进array2里</p>
+<h3 id="Swap-array"><a href="#Swap-array" class="headerlink" title="Swap array"></a>Swap array</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; arr.length / 2; i++)</span><br><span class="line">&#123;</span><br><span class="line">    String temp = arr[i];</span><br><span class="line">    arr[i] = arr[arr.length - i - 1];</span><br><span class="line">    arr[arr.length - i - 1] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Search-elements-in-an-array"><a href="#Search-elements-in-an-array" class="headerlink" title="Search elements in an array"></a>Search elements in an array</h3><ol>
+<li>linear search: 通过遍历的方式，一个一个的对比查找，具有普遍适用性</li>
+<li>binary search:<br> 每次比较中间值，&lt; nums[mid] 找左边。数组必须有序</li>
+</ol>
+<h3 id="Sorting-algorithms"><a href="#Sorting-algorithms" class="headerlink" title="Sorting algorithms"></a>Sorting algorithms</h3><ol>
+<li>Selection sort <strong>O(n^2)</strong></li>
+<li>Bubble sort <strong>O(n^2)</strong></li>
+<li>Quick sort <strong>O(nlogn)</strong></li>
+<li>Insertion sort <strong>O(n^2)</strong></li>
+<li>Merge sort <strong>O(nlogn)</strong></li>
+<li>Heap sort <strong>O(nlogn)</strong></li>
+</ol>
+<p>Time complexity, space compelxity are two of the most important keys</p>
+<p>外部排序需要借助disk</p>
+<h3 id="Bubble-sort"><a href="#Bubble-sort" class="headerlink" title="Bubble sort"></a>Bubble sort</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; arr.length - 1; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(int j = 0; j &lt; arr.length - 1 - i; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[j] &gt; arr[j + 1])</span><br><span class="line">        &#123;</span><br><span class="line">            int temp = arr[j];</span><br><span class="line">            arr[j] = arr[j + 1];</span><br><span class="line">            arr[j + 1] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><ol>
+<li>using java util package</li>
+<li>Arrays: 提供了 很多操作数组的方法</li>
+</ol>
+<h3 id="Procedure-oriented-amp-Objected-oriented"><a href="#Procedure-oriented-amp-Objected-oriented" class="headerlink" title="Procedure-oriented &amp; Objected-oriented"></a>Procedure-oriented &amp; Objected-oriented</h3><p>Procedure-oriented: 强调功能行为，以函数为最小单位，考虑怎么做</p>
+<ol>
+<li>把冰箱门打开</li>
+<li>抬起大象，塞进冰箱</li>
+<li>关冰箱门</li>
+</ol>
+<p>Objected-oriented:<br>具备了功能的对象，以class/object为单位，考虑谁来做</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">person</span><br><span class="line">&#123;</span><br><span class="line">     new fridge()</span><br><span class="line">     &#123;</span><br><span class="line">        fridge.open()</span><br><span class="line">     &#123;</span><br><span class="line">     </span><br><span class="line">     new elephant()</span><br><span class="line">     &#123;</span><br><span class="line">        elephant.enter();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fridge</span><br><span class="line">&#123;</span><br><span class="line">    open();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">elephant</span><br><span class="line">&#123;</span><br><span class="line">    enter();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>OOP可以在现有的基础之上直接改class，但是POP要深入到程序里改。大项目里OOP优势明显。</p>
+<h3 id="OOP-three-features"><a href="#OOP-three-features" class="headerlink" title="OOP three features"></a>OOP three features</h3><ol>
+<li>Encapsulation</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java Basic</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
 </search>
