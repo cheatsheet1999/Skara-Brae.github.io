@@ -290,7 +290,12 @@
   <entry>
     <title>Multimedia Information Systems Lecture 1</title>
     <url>/2021/01/12/CSE408-Lecture-1/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="About-CSE-408"><a href="#About-CSE-408" class="headerlink" title="About CSE 408"></a>About CSE 408</h3><p>Description: the course deals with the design, use, and applications of multimedia information systems. An introduction to acquisition, processing, compression, storage, retrieval, and presentation of data from different media types such as images, text, voice, graphics, and alphanumeric.<br>• Learning objectives: master fundamental concepts, specific domain knowledge, applications, and current research topics.</p>
+<a id="more"></a>
+
+<h3 id="Topics-To-Be-Covered"><a href="#Topics-To-Be-Covered" class="headerlink" title="Topics To Be Covered"></a>Topics To Be Covered</h3><p>• Introduction to multimedia systems<br>• Web search<br>• Natural language processing<br>• Sound informatics<br>• Image &amp; video<br>• Compression algorithms and standards (JPEG, MPEG)<br>• Multimedia Information System design<br>• Data mining and artificial intelligence<br>• Data visualization<br>• Computer vision algorithms and applications<br>• Multimedia Information System performance evaluation</p>
+<h3 id="Multimedia-elements"><a href="#Multimedia-elements" class="headerlink" title="Multimedia elements"></a>Multimedia elements</h3><p>Audio -&gt; Video -&gt; Animation -&gt; Interactive -&gt; graphic -&gt; text</p>
+]]></content>
       <categories>
         <category>Multimedia Information Systems</category>
       </categories>
@@ -340,6 +345,16 @@
 <li>Inheritance</li>
 <li>Polymorphism</li>
 </ol>
+<h3 id="OOP-concepts"><a href="#OOP-concepts" class="headerlink" title="OOP concepts"></a>OOP concepts</h3><p>Class and Object is the Key concept of OOP</p>
+<p>Class: 抽象的，概念上的定义<br>Object: 实际存在的个体，so called instance<br>面向对象的程序设计的重点是object的设计，<br>设计object, 就是设计Object的成员</p>
+<h3 id="OOP-program"><a href="#OOP-program" class="headerlink" title="OOP program"></a>OOP program</h3><ol>
+<li>创建class，设计class的成员</li>
+<li>创建class的object</li>
+<li>Call object.filed OR object.methods 调用Object的结构<br>4。 如果创建了一个class的多个object，每个object都有独立的一个class field（ non- static)<br>如果我们修改一个对象的field a，不影响另外一个object的field</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">public class PersonTest</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        //创建person类的对象 = 类的实例化</span><br><span class="line">        //每new一个object，heap里就多一个空间</span><br><span class="line">        Person p1 = new Person();</span><br><span class="line">        </span><br><span class="line">        //call object: object.field</span><br><span class="line">        p1.name = <span class="string">&quot;Tom&quot;</span>;</span><br><span class="line">        p1.isMale = <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        //call methods: object.method</span><br><span class="line">        p1.eat();</span><br><span class="line">        p1.sleep();</span><br><span class="line">        p1.talk(<span class="string">&quot;English&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        //**********************************</span><br><span class="line">        Person p2 = new Person();</span><br><span class="line">        System.out.println(p2.name); //null</span><br><span class="line">        System.out.println(p2.isMale); //<span class="literal">false</span> </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        //**********************************</span><br><span class="line">        //将P1变量保存的obejct address给p3，导致p1和p3指向了heap里的同一个block</span><br><span class="line">        Person p3 = p1;</span><br><span class="line">        System.out.println(p3.name); //Tom</span><br><span class="line">        </span><br><span class="line">        p3.age = 10;</span><br><span class="line">        System.out.println(p1.age); //10 </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    //属性 -&gt; field</span><br><span class="line">    String name;</span><br><span class="line">    int age = 1; //可以赋值也可以不赋值</span><br><span class="line">    boolean isMale;//default is <span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">    //方法 -&gt; method</span><br><span class="line">    public void eat()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People eat&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void sleep()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People sleep&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void talk(String language)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People talk,</span></span><br><span class="line"><span class="string">        by speaking &quot;</span> + language);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 ]]></content>
       <categories>
         <category>Java Basic</category>
