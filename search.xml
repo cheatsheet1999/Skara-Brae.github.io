@@ -288,13 +288,50 @@
       </tags>
   </entry>
   <entry>
-    <title>Multimedia Information Systems Lecture 1</title>
+    <title>Multimedia Information Systems Lecture 1, 2</title>
     <url>/2021/01/12/CSE408-Lecture-1/</url>
     <content><![CDATA[<h3 id="About-CSE-408"><a href="#About-CSE-408" class="headerlink" title="About CSE 408"></a>About CSE 408</h3><p>Description: the course deals with the design, use, and applications of multimedia information systems. An introduction to acquisition, processing, compression, storage, retrieval, and presentation of data from different media types such as images, text, voice, graphics, and alphanumeric.<br>• Learning objectives: master fundamental concepts, specific domain knowledge, applications, and current research topics.</p>
 <a id="more"></a>
 
 <h3 id="Topics-To-Be-Covered"><a href="#Topics-To-Be-Covered" class="headerlink" title="Topics To Be Covered"></a>Topics To Be Covered</h3><p>• Introduction to multimedia systems<br>• Web search<br>• Natural language processing<br>• Sound informatics<br>• Image &amp; video<br>• Compression algorithms and standards (JPEG, MPEG)<br>• Multimedia Information System design<br>• Data mining and artificial intelligence<br>• Data visualization<br>• Computer vision algorithms and applications<br>• Multimedia Information System performance evaluation</p>
 <h3 id="Multimedia-elements"><a href="#Multimedia-elements" class="headerlink" title="Multimedia elements"></a>Multimedia elements</h3><p>Audio -&gt; Video -&gt; Animation -&gt; Interactive -&gt; graphic -&gt; text</p>
+<h2 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h2><p>Assumption 1: A hyperlink between pages denotes author perceived relevance (quality signal)</p>
+<p>Assumption 2: The author of the hyperlink describes the target page (texual context)</p>
+<p>Q: how hard is it go from one page to another?<br>Over 75% of the time there is no directed path from one ranfom web page to another</p>
+<p>When a directed path exitsts, 16 clicks<br>When an undirected path exists its average 7 clicks</p>
+<p><strong>six degree of separation</strong> 你和任何一个陌生人之间所间隔的人不会超过六个</p>
+<h3 id="Information-retrieval"><a href="#Information-retrieval" class="headerlink" title="Information retrieval"></a>Information retrieval</h3><p><strong><em>Web search vs. Info retrieval</em></strong><br>• The scale of web search<br>• The web is very dynamic<br>•  The quality of web page is not uniform<br>•  Have to figure out which belong to the topic, range is wide</p>
+<p>Theree types of queires<br>Navigational: Ex: Facebook. Simply look the place you want to reach<br>Informational: what is age of CLINTON? very specific<br>Transacational: search for commercial nature, Eg: gut insurance quote</p>
+<p>There are more than 3.5M google searches every day<br>76% of global searches take place on google<br>60% are from mobile devices<br>80% of sarches were informational</p>
+<h3 id="The-anatomy-of-a-large-scale-hypertexual-web-search-engine"><a href="#The-anatomy-of-a-large-scale-hypertexual-web-search-engine" class="headerlink" title="The anatomy of a large-scale hypertexual web search engine"></a>The anatomy of a large-scale hypertexual web search engine</h3><p>Web searching: architecture<br>• Web crawler: first algorithm<br>a way to collect large data</p>
+<p>retireve the page, extract URL, update and repeat</p>
+<p><strong>Indexing the web Goals: precision</strong><br>short queries applied to very large numbers of items leads to large number of hits</p>
+<ul>
+<li>goal is that the first 10-100 hits should satisify users</li>
+<li>recall is not an important criterion</li>
+</ul>
+<p>completeness of index is not an important factot</p>
+<p><strong>Concept of relevance and importance</strong><br>Relevance</p>
+<ol>
+<li>involved documents similarity between terms in the query and each document</li>
+<li>location info, for use of proximity in multi-world search</li>
+<li>in page title, page url important</li>
+<li>font, color also considerd</li>
+</ol>
+<p>Importance: measures documents by their likelihood of being useful to a variety of users. popularity.</p>
+<p><strong>Inverted index</strong><br>• For each word: set of documents where it occurs<br>Take popular word in documents as a term</p>
+<h3 id="page-rank-algorithm"><a href="#page-rank-algorithm" class="headerlink" title="page rank algorithm"></a>page rank algorithm</h3><p>Used to estimate popularity of documents<br>if doc has more links to it, then more findable it is.</p>
+<p><strong>Intuitive model</strong><br>A user:</p>
+<ol>
+<li>starts at a random page on the web</li>
+<li>select random hyperlink from current page and jumps to the corresponding page</li>
+<li>repeat step 2 at a very large number of times.</li>
+</ol>
+<p>page are ranked according to the relative frequency with which they are visted </p>
+<p><strong>Basic algorithm</strong><br>• Matrix Representation<br>• Normalize by number of links from page<br>• weighting pages- initally all pages 1/n, recalculate weights<br>• iterate</p>
+<p>Random teleports<br>The google solution for spider traps</p>
+<p><strong>SIngle word query ranking</strong><br>• Assign weights</p>
+<p><strong>Multi-word query ranking</strong><br>Similar to single word but have to use proximity on the document</p>
 ]]></content>
       <categories>
         <category>Multimedia Information Systems</category>
@@ -309,6 +346,8 @@
     <content><![CDATA[<h3 id="Array-copy"><a href="#Array-copy" class="headerlink" title="Array copy"></a>Array copy</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">int[] array1, array2;</span><br><span class="line">array1 = new int[] &#123;2,3,5,7,8,9,12,11,10&#125;;</span><br><span class="line"></span><br><span class="line">//copy array1 to array2</span><br><span class="line">array2 = new int[array1.length];</span><br><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; array2.length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    array2[i] = array1[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们通过new的方式，给array2在heap空间中开辟了新的数组空间，将array1数组的元素值一个个的copy进array2里</p>
 <h3 id="Swap-array"><a href="#Swap-array" class="headerlink" title="Swap array"></a>Swap array</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; arr.length / 2; i++)</span><br><span class="line">&#123;</span><br><span class="line">    String temp = arr[i];</span><br><span class="line">    arr[i] = arr[arr.length - i - 1];</span><br><span class="line">    arr[arr.length - i - 1] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h3 id="Search-elements-in-an-array"><a href="#Search-elements-in-an-array" class="headerlink" title="Search elements in an array"></a>Search elements in an array</h3><ol>
 <li>linear search: 通过遍历的方式，一个一个的对比查找，具有普遍适用性</li>
@@ -348,19 +387,134 @@
 <h3 id="OOP-concepts"><a href="#OOP-concepts" class="headerlink" title="OOP concepts"></a>OOP concepts</h3><p>Class and Object is the Key concept of OOP</p>
 <p>Class: 抽象的，概念上的定义<br>Object: 实际存在的个体，so called instance<br>面向对象的程序设计的重点是object的设计，<br>设计object, 就是设计Object的成员</p>
 <h3 id="OOP-program"><a href="#OOP-program" class="headerlink" title="OOP program"></a>OOP program</h3><ol>
-<li>创建class，设计class的成员</li>
-<li>创建class的object</li>
-<li>Call object.filed OR object.methods 调用Object的结构<br>4。 如果创建了一个class的多个object，每个object都有独立的一个class field（ non- static)<br>如果我们修改一个对象的field a，不影响另外一个object的field</li>
+<li><p>创建class，设计class的成员</p>
+</li>
+<li><p>创建class的object</p>
+</li>
+<li><p>Call object.filed OR object.methods 调用Object的结构</p>
+</li>
+<li><p>如果创建了一个class的多个object，每个object都有独立的一个class field（non- static) 如果我们修改一个对象的field a，不影响另外一个object的field. 除非我们让两个object指向heap里的同一个区域, 那么更改其中一个，另一个也会改变。</p>
+</li>
+<li><p>Heap 存放 Object instantiation<br> Stack 存放 Local variable</p>
+</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">public class PersonTest</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        //创建person类的对象 = 类的实例化</span><br><span class="line">        //每new一个object，heap里就多一个空间</span><br><span class="line">        Person p1 = new Person();</span><br><span class="line">        </span><br><span class="line">        //call object: object.field</span><br><span class="line">        p1.name = <span class="string">&quot;Tom&quot;</span>;</span><br><span class="line">        p1.isMale = <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        //call methods: object.method</span><br><span class="line">        p1.eat();</span><br><span class="line">        p1.sleep();</span><br><span class="line">        p1.talk(<span class="string">&quot;English&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        //**********************************</span><br><span class="line">        Person p2 = new Person();</span><br><span class="line">        System.out.println(p2.name); //null</span><br><span class="line">        System.out.println(p2.isMale); //<span class="literal">false</span> </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        //**********************************</span><br><span class="line">        //将P1变量保存的obejct address给p3，导致p1和p3指向了heap里的同一个block</span><br><span class="line">        Person p3 = p1;</span><br><span class="line">        System.out.println(p3.name); //Tom</span><br><span class="line">        </span><br><span class="line">        p3.age = 10;</span><br><span class="line">        System.out.println(p1.age); //10 </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    //属性 -&gt; field</span><br><span class="line">    String name;</span><br><span class="line">    int age = 1; //可以赋值也可以不赋值</span><br><span class="line">    boolean isMale;//default is <span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">    //方法 -&gt; method</span><br><span class="line">    public void eat()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People eat&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void sleep()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People sleep&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void talk(String language)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People talk,</span></span><br><span class="line"><span class="string">        by speaking &quot;</span> + language);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+<h3 id="Object-memory-analysis"><a href="#Object-memory-analysis" class="headerlink" title="Object memory analysis"></a>Object memory analysis</h3><p>Person p1 = new Person();  <strong>new memory in heap</strong><br>p1.name = “Tom”;<br><strong>The variable in methods are all local variable</strong><br>p1.isMale = true; </p>
+<p>Person p2 = new Person();<br>System.out.println(p2.name);<br>Person p3 = p1;<br>p3.age = 10;</p>
+<p><strong><em>stack</em></strong> p1 0x12b<br>                        –&gt; p2 0x778<br>                   p3 0x12b     </p>
+<p><strong><em>heap</em></strong><br>name: null -&gt; “Tom”<br>                 age: 1<br>                 isMale: false -&gt; “true”<br>    –&gt;P2 name: null<br>            age: 1<br>            isMale: false</p>
+<h3 id="Call-Field-in-Object"><a href="#Call-Field-in-Object" class="headerlink" title="Call Field in Object"></a>Call Field in Object</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">// member variable VS <span class="built_in">local</span> variable</span><br><span class="line">1.相同点：</span><br><span class="line">    1.1 定义variable的格式，data <span class="built_in">type</span>， variable name</span><br><span class="line">    1.2 先声明，后使用</span><br><span class="line">    1.3 都有scope</span><br><span class="line"></span><br><span class="line">2.不同点：</span><br><span class="line">    2.1 在class中intialize的位置不同</span><br><span class="line">    field: 直接定义在class的一对&#123;&#125;里</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">local</span> variable: 在method内，method arguments， constructor arguments, variable inside constructor 都是<span class="built_in">local</span> variable出现的位置</span><br><span class="line">    </span><br><span class="line">    2.2 Access modifiers</span><br><span class="line">    member variable 可以在声明时，指明权限</span><br><span class="line">    常用的access modifiers</span><br><span class="line">    private, public, protected, default</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">class User</span><br><span class="line">&#123;</span><br><span class="line">    // 2.1 field OR member variable OR instance variable</span><br><span class="line">    </span><br><span class="line">    String name;</span><br><span class="line">    int age;</span><br><span class="line">    bool isMale;</span><br><span class="line">    </span><br><span class="line">    // language is an arguments</span><br><span class="line">    //所以是<span class="built_in">local</span> variable</span><br><span class="line">    public void talk(String language)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;We use &quot;</span> + language);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void eat()</span><br><span class="line">    &#123;</span><br><span class="line">        //定义在method内的variable，是<span class="built_in">local</span> variable</span><br><span class="line">        //不能加public 或者 private</span><br><span class="line">        //因为是<span class="built_in">local</span> variable，方法是public，里面的<span class="built_in">local</span> variable就也是public了</span><br><span class="line">        String food = <span class="string">&quot;taco&quot;</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;We like &quot;</span> + food);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Access-modifiers"><a href="#Access-modifiers" class="headerlink" title="Access modifiers"></a>Access modifiers</h3><p>member variable 可以在声明时，指明权限<br>常用的access modifiers<br>private, public, protected, default<br>*(Encapsulation)*</p>
+<p>Local variable cannot use access modifier</p>
 ]]></content>
       <categories>
         <category>Java Basic</category>
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Software Analysis and Design Lecture 2</title>
+    <url>/2021/01/11/CSE460-Lecture2/</url>
+    <content><![CDATA[<h3 id="Blueprint"><a href="#Blueprint" class="headerlink" title="Blueprint"></a>Blueprint</h3><p>A graphic description to create a <strong>specification</strong></p>
+<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ol>
+<li><p>Size: The number of components<br>tree: 3 lines of code, but more complexity<br>bubble sort: 10 lines of code</p>
+</li>
+<li><p>Abstraction<br>what is behind code? Eg: tree has less code but harder</p>
+</li>
+</ol>
+<h3 id="Problem-with-complexity"><a href="#Problem-with-complexity" class="headerlink" title="Problem with complexity"></a>Problem with complexity</h3><ol>
+<li><p>the more <strong>complex</strong> the system, the more open it is to total <strong>breakdown</strong>.</p>
+<pre><code> breakdown because of lack of -&gt; skill
+                                                   -&gt; communication</code></pre>
+</li>
+<li><p>software crisis: <strong>late</strong>, over <strong>budget</strong>, deficient satisfying requirements</p>
+</li>
+</ol>
+<p>Prototype, 1 person, limited purpose and short life span<br>Reuse, modify, extend software if needed, but don’t do in prototype</p>
+<h3 id="chanllenges"><a href="#chanllenges" class="headerlink" title="chanllenges"></a>chanllenges</h3><p><strong>Communication gap</strong> between the users and developers<br><strong>Trade-off</strong>: competing, contradictory, requirements<br><strong>Quality</strong>: usability, reliability, performance, cost</p>
+<p>Be a teammate or leader, one of the main responsibility<br>Management: keep the issusion of <strong>Simplicity</strong></p>
+<p>maximum number of <strong>chunks of information</strong>. 7 +- 2 things you can think in your brain at the same time</p>
+<h3 id="User-stories-amp-Use-cases"><a href="#User-stories-amp-Use-cases" class="headerlink" title="User stories &amp; Use cases"></a>User stories &amp; Use cases</h3><p><em>Independent</em> - loosely coupled with one another<br><em>Negotiable</em> - stories are what and why, not how<br><em>Value</em> - for the customer<br><em>Estimate</em> - effort.cost of design, build, test<br><em>Small</em> (size appropriately) 1 programmer and 1 week<br><em>Testable</em> - pass or fail</p>
+<p>“I want a pacman videogame” is <strong>Not</strong> a requirement</p>
+<p>Requirement:</p>
+<p><strong>Functional Requirement</strong></p>
+<ol>
+<li>Draw pacman   </li>
+<li>Move pacman   </li>
+</ol>
+<p>Quality &amp; Constraint is <strong>Non Functional Requirement</strong></p>
+<ol>
+<li>Use java to develop game</li>
+<li><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class Pacman</span><br><span class="line">&#123;</span><br><span class="line">    void paintComponent(graphic)</span><br><span class="line">    &#123;</span><br><span class="line">        g.drawOval(x,y,10)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">set</span> x();</span><br><span class="line">    <span class="built_in">set</span> y();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ____</span><br><span class="line">    m() ____x y</span><br><span class="line">&#123;    &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>Q: How many requirements approximately in pacman video games<br>A: 25 - 50 requirements<br>If less than 25, may be some lines need to be split. If combine two tasks, means we need 2 people to do, but 1 requirement only need 1 person.</p>
+]]></content>
+      <categories>
+        <category>Software Analysis and Design</category>
+      </categories>
+      <tags>
+        <tag>CSE460</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Info Assurance &amp; Security Lecture 2</title>
+    <url>/2021/01/13/CSE543-Lecture2/</url>
+    <content><![CDATA[<h3 id="Project-Guidelines"><a href="#Project-Guidelines" class="headerlink" title="Project Guidelines"></a>Project Guidelines</h3><ol>
+<li><p>Project title [8-20 words]<br>(indicate what’s in the paper)</p>
+</li>
+<li><p>one week to read papers, one week to finialize </p>
+</li>
+<li><p>No more than 10% internet paper, they were not been peer reviewed</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Info Assurance &amp; Security</category>
+      </categories>
+      <tags>
+        <tag>CSE543</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode Q34 Find First and Last Position of Element in Sorted Array</title>
+    <url>/2021/01/14/LeetCode-Q34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public int[] searchRange(int[] nums, int target)</span><br><span class="line">    &#123;</span><br><span class="line">        int start = 0;</span><br><span class="line">        int end = nums.length - 1;</span><br><span class="line">        int[] ans = &#123;-1, -1&#125;;</span><br><span class="line">        //<span class="built_in">test</span> <span class="keyword">case</span> is &#123;&#125;</span><br><span class="line">        <span class="keyword">if</span>(nums.length == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(start &lt;= end)</span><br><span class="line">        &#123;</span><br><span class="line">            int mid = (start + end) / 2;</span><br><span class="line">            <span class="keyword">if</span>(target == nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                //丢弃右边</span><br><span class="line">                end = mid - 1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target &lt; nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                end = mid - 1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                start = mid + 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //考虑 tartget 是否存在，判断我们要找的值是否等于 target 并且是否越界</span><br><span class="line">        // <span class="keyword">if</span> target existed, nums[start] == target</span><br><span class="line">        <span class="keyword">if</span>(start == nums.length || nums[start] != target)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            ans[0] = start;</span><br><span class="line">        &#125;</span><br><span class="line">        ans[0] = start;</span><br><span class="line">        start = 0;</span><br><span class="line">        end = nums.length - 1;</span><br><span class="line">        <span class="keyword">while</span>(start &lt;= end)</span><br><span class="line">        &#123;</span><br><span class="line">            int mid = (start + end) / 2;</span><br><span class="line">            <span class="keyword">if</span>(target == nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                //丢弃左边</span><br><span class="line">                start = mid + 1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target &lt; nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                end = mid - 1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                start = mid + 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans[1] = end;</span><br><span class="line">        <span class="built_in">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Binary Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode Q46 Permutations</title>
+    <url>/2021/01/14/LeetCode-Q46-Permutations/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; permute(int[] nums)</span><br><span class="line">    &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        backtrack(list, new ArrayList&lt;&gt;(), nums);</span><br><span class="line">        <span class="built_in">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void backtrack(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, int[] nums)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(tempList.size() == nums.length)</span><br><span class="line">        &#123;</span><br><span class="line">            list.add(new ArrayList&lt;&gt;(tempList));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(int i = 0; i &lt; nums.length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                //跳过已经存在的元素</span><br><span class="line">                <span class="keyword">if</span>(tempList.contains(nums[i])) <span class="built_in">continue</span>;</span><br><span class="line">                //将当前元素加入</span><br><span class="line">                tempList.add(nums[i]);</span><br><span class="line">                //向后继续添加</span><br><span class="line">                backtrack(list, tempList, nums);</span><br><span class="line">                //将 tempList 刚添加的元素，去掉，尝试新的元素</span><br><span class="line">                //每次超出<span class="keyword">for</span> loop的循环或者size == nums.length时都会运行此行，so called backtrack</span><br><span class="line">                tempList.remove(tempList.size() - 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>backtrack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode Q39 Combination Sum</title>
+    <url>/2021/01/14/LeetCode-Q39-Combination-Sum/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; combinationSum(int[] nums, int target)</span><br><span class="line">    &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        backtrack(list, new ArrayList&lt;&gt;(), nums, target, 0);</span><br><span class="line">        <span class="built_in">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">private void backtrack(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, int [] nums, int remain, int start)&#123;</span><br><span class="line">    <span class="keyword">if</span>(remain &lt; 0) <span class="built_in">return</span>; //1st round: remain is target</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(remain == 0) list.add(new ArrayList&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(int i = start; i &lt; nums.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            tempList.add(nums[i]);</span><br><span class="line">            backtrack(list, tempList, nums, remain - nums[i], i);</span><br><span class="line">            //找到了一个解或者 remain &lt; 0 了，将当前数字移除，然后继续尝试</span><br><span class="line">            tempList.remove(tempList.size() - 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>backtrack</tag>
       </tags>
   </entry>
 </search>

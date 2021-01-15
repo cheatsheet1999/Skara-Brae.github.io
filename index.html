@@ -219,7 +219,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -232,7 +232,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -279,6 +279,433 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/14/LeetCode-Q46-Permutations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/14/LeetCode-Q46-Permutations/" class="post-title-link" itemprop="url">LeetCode Q46 Permutations</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-14 19:50:38 / Modified: 19:54:38" itemprop="dateCreated datePublished" datetime="2021-01-14T19:50:38-07:00">2021-01-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/14/LeetCode-Q46-Permutations/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/14/LeetCode-Q46-Permutations/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>757</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; permute(int[] nums)</span><br><span class="line">    &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        backtrack(list, new ArrayList&lt;&gt;(), nums);</span><br><span class="line">        <span class="built_in">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void backtrack(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, int[] nums)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(tempList.size() == nums.length)</span><br><span class="line">        &#123;</span><br><span class="line">            list.add(new ArrayList&lt;&gt;(tempList));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(int i = 0; i &lt; nums.length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                //跳过已经存在的元素</span><br><span class="line">                <span class="keyword">if</span>(tempList.contains(nums[i])) <span class="built_in">continue</span>;</span><br><span class="line">                //将当前元素加入</span><br><span class="line">                tempList.add(nums[i]);</span><br><span class="line">                //向后继续添加</span><br><span class="line">                backtrack(list, tempList, nums);</span><br><span class="line">                //将 tempList 刚添加的元素，去掉，尝试新的元素</span><br><span class="line">                //每次超出<span class="keyword">for</span> loop的循环或者size == nums.length时都会运行此行，so called backtrack</span><br><span class="line">                tempList.remove(tempList.size() - 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/14/LeetCode-Q39-Combination-Sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/14/LeetCode-Q39-Combination-Sum/" class="post-title-link" itemprop="url">LeetCode Q39 Combination Sum</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-14 19:50:14 / Modified: 19:54:03" itemprop="dateCreated datePublished" datetime="2021-01-14T19:50:14-07:00">2021-01-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/14/LeetCode-Q39-Combination-Sum/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/14/LeetCode-Q39-Combination-Sum/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>709</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; combinationSum(int[] nums, int target)</span><br><span class="line">    &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        backtrack(list, new ArrayList&lt;&gt;(), nums, target, 0);</span><br><span class="line">        <span class="built_in">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">private void backtrack(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, int [] nums, int remain, int start)&#123;</span><br><span class="line">    <span class="keyword">if</span>(remain &lt; 0) <span class="built_in">return</span>; //1st round: remain is target</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(remain == 0) list.add(new ArrayList&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(int i = start; i &lt; nums.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            tempList.add(nums[i]);</span><br><span class="line">            backtrack(list, tempList, nums, remain - nums[i], i);</span><br><span class="line">            //找到了一个解或者 remain &lt; 0 了，将当前数字移除，然后继续尝试</span><br><span class="line">            tempList.remove(tempList.size() - 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/14/LeetCode-Q34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/14/LeetCode-Q34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/" class="post-title-link" itemprop="url">LeetCode Q34 Find First and Last Position of Element in Sorted Array</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-14 19:49:48 / Modified: 19:52:44" itemprop="dateCreated datePublished" datetime="2021-01-14T19:49:48-07:00">2021-01-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/14/LeetCode-Q34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/14/LeetCode-Q34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>913</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public int[] searchRange(int[] nums, int target)</span><br><span class="line">    &#123;</span><br><span class="line">        int start = 0;</span><br><span class="line">        int end = nums.length - 1;</span><br><span class="line">        int[] ans = &#123;-1, -1&#125;;</span><br><span class="line">        //<span class="built_in">test</span> <span class="keyword">case</span> is &#123;&#125;</span><br><span class="line">        <span class="keyword">if</span>(nums.length == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(start &lt;= end)</span><br><span class="line">        &#123;</span><br><span class="line">            int mid = (start + end) / 2;</span><br><span class="line">            <span class="keyword">if</span>(target == nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                //丢弃右边</span><br><span class="line">                end = mid - 1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target &lt; nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                end = mid - 1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                start = mid + 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //考虑 tartget 是否存在，判断我们要找的值是否等于 target 并且是否越界</span><br><span class="line">        // <span class="keyword">if</span> target existed, nums[start] == target</span><br><span class="line">        <span class="keyword">if</span>(start == nums.length || nums[start] != target)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            ans[0] = start;</span><br><span class="line">        &#125;</span><br><span class="line">        ans[0] = start;</span><br><span class="line">        start = 0;</span><br><span class="line">        end = nums.length - 1;</span><br><span class="line">        <span class="keyword">while</span>(start &lt;= end)</span><br><span class="line">        &#123;</span><br><span class="line">            int mid = (start + end) / 2;</span><br><span class="line">            <span class="keyword">if</span>(target == nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                //丢弃左边</span><br><span class="line">                start = mid + 1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target &lt; nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                end = mid - 1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                start = mid + 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans[1] = end;</span><br><span class="line">        <span class="built_in">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/CSE543-Lecture2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/13/CSE543-Lecture2/" class="post-title-link" itemprop="url">Info Assurance & Security Lecture 2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-13 10:30:34 / Modified: 13:54:36" itemprop="dateCreated datePublished" datetime="2021-01-13T10:30:34-07:00">2021-01-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Info-Assurance-Security/" itemprop="url" rel="index"><span itemprop="name">Info Assurance & Security</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/13/CSE543-Lecture2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/13/CSE543-Lecture2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>158</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="Project-Guidelines"><a href="#Project-Guidelines" class="headerlink" title="Project Guidelines"></a>Project Guidelines</h3><ol>
+<li><p>Project title [8-20 words]<br>(indicate what’s in the paper)</p>
+</li>
+<li><p>one week to read papers, one week to finialize </p>
+</li>
+<li><p>No more than 10% internet paper, they were not been peer reviewed</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/12/CSE408-Lecture-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -293,7 +720,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/12/CSE408-Lecture-1/" class="post-title-link" itemprop="url">Multimedia Information Systems Lecture 1</a>
+            <a href="/2021/01/12/CSE408-Lecture-1/" class="post-title-link" itemprop="url">Multimedia Information Systems Lecture 1, 2</a>
         </h2>
 
         <div class="post-meta-container">
@@ -303,10 +730,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-01-12 10:34:19 / Modified: 12:05:13" itemprop="dateCreated datePublished" datetime="2021-01-12T10:34:19-07:00">2021-01-12</time>
+      <time title="Created: 2021-01-12 10:34:19" itemprop="dateCreated datePublished" datetime="2021-01-12T10:34:19-07:00">2021-01-12</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-14 11:32:09" itemprop="dateModified" datetime="2021-01-14T11:32:09-07:00">2021-01-14</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -339,14 +772,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>795</span>
+      <span>3k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -423,7 +856,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-12 23:28:30" itemprop="dateModified" datetime="2021-01-12T23:28:30-07:00">2021-01-12</time>
+        <time title="Modified: 2021-01-13 00:13:03" itemprop="dateModified" datetime="2021-01-13T00:13:03-07:00">2021-01-13</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -457,14 +890,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>2.8k</span>
+      <span>4.2k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
+      <span>4 mins.</span>
     </span>
 </div>
 
@@ -478,53 +911,14 @@
           <h3 id="Array-copy"><a href="#Array-copy" class="headerlink" title="Array copy"></a>Array copy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int[] array1, array2;</span><br><span class="line">array1 = new int[] &#123;2,3,5,7,8,9,12,11,10&#125;;</span><br><span class="line"></span><br><span class="line">//copy array1 to array2</span><br><span class="line">array2 = new int[array1.length];</span><br><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; array2.length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    array2[i] = array1[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们通过new的方式，给array2在heap空间中开辟了新的数组空间，将array1数组的元素值一个个的copy进array2里</p>
 <h3 id="Swap-array"><a href="#Swap-array" class="headerlink" title="Swap array"></a>Swap array</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; arr.length / 2; i++)</span><br><span class="line">&#123;</span><br><span class="line">    String temp = arr[i];</span><br><span class="line">    arr[i] = arr[arr.length - i - 1];</span><br><span class="line">    arr[arr.length - i - 1] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Search-elements-in-an-array"><a href="#Search-elements-in-an-array" class="headerlink" title="Search elements in an array"></a>Search elements in an array</h3><ol>
-<li>linear search: 通过遍历的方式，一个一个的对比查找，具有普遍适用性</li>
-<li>binary search:<br> 每次比较中间值，&lt; nums[mid] 找左边。数组必须有序</li>
-</ol>
-<h3 id="Sorting-algorithms"><a href="#Sorting-algorithms" class="headerlink" title="Sorting algorithms"></a>Sorting algorithms</h3><ol>
-<li>Selection sort <strong>O(n^2)</strong></li>
-<li>Bubble sort <strong>O(n^2)</strong></li>
-<li>Quick sort <strong>O(nlogn)</strong></li>
-<li>Insertion sort <strong>O(n^2)</strong></li>
-<li>Merge sort <strong>O(nlogn)</strong></li>
-<li>Heap sort <strong>O(nlogn)</strong></li>
-</ol>
-<p>Time complexity, space compelxity are two of the most important keys</p>
-<p>外部排序需要借助disk</p>
-<h3 id="Bubble-sort"><a href="#Bubble-sort" class="headerlink" title="Bubble sort"></a>Bubble sort</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; arr.length - 1; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(int j = 0; j &lt; arr.length - 1 - i; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[j] &gt; arr[j + 1])</span><br><span class="line">        &#123;</span><br><span class="line">            int temp = arr[j];</span><br><span class="line">            arr[j] = arr[j + 1];</span><br><span class="line">            arr[j + 1] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><ol>
-<li>using java util package</li>
-<li>Arrays: 提供了 很多操作数组的方法</li>
-</ol>
-<h3 id="Procedure-oriented-amp-Objected-oriented"><a href="#Procedure-oriented-amp-Objected-oriented" class="headerlink" title="Procedure-oriented &amp; Objected-oriented"></a>Procedure-oriented &amp; Objected-oriented</h3><p>Procedure-oriented: 强调功能行为，以函数为最小单位，考虑怎么做</p>
-<ol>
-<li>把冰箱门打开</li>
-<li>抬起大象，塞进冰箱</li>
-<li>关冰箱门</li>
-</ol>
-<p>Objected-oriented:<br>具备了功能的对象，以class/object为单位，考虑谁来做</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">person</span><br><span class="line">&#123;</span><br><span class="line">     new fridge()</span><br><span class="line">     &#123;</span><br><span class="line">        fridge.open()</span><br><span class="line">     &#123;</span><br><span class="line">     </span><br><span class="line">     new elephant()</span><br><span class="line">     &#123;</span><br><span class="line">        elephant.enter();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fridge</span><br><span class="line">&#123;</span><br><span class="line">    open();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">elephant</span><br><span class="line">&#123;</span><br><span class="line">    enter();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>OOP可以在现有的基础之上直接改class，但是POP要深入到程序里改。大项目里OOP优势明显。</p>
-<h3 id="OOP-three-features"><a href="#OOP-three-features" class="headerlink" title="OOP three features"></a>OOP three features</h3><ol>
-<li>Encapsulation</li>
-<li>Inheritance</li>
-<li>Polymorphism</li>
-</ol>
-<h3 id="OOP-concepts"><a href="#OOP-concepts" class="headerlink" title="OOP concepts"></a>OOP concepts</h3><p>Class and Object is the Key concept of OOP</p>
-<p>Class: 抽象的，概念上的定义<br>Object: 实际存在的个体，so called instance<br>面向对象的程序设计的重点是object的设计，<br>设计object, 就是设计Object的成员</p>
-<h3 id="OOP-program"><a href="#OOP-program" class="headerlink" title="OOP program"></a>OOP program</h3><ol>
-<li>创建class，设计class的成员</li>
-<li>创建class的object</li>
-<li>Call object.filed OR object.methods 调用Object的结构<br>4。 如果创建了一个class的多个object，每个object都有独立的一个class field（ non- static)<br>如果我们修改一个对象的field a，不影响另外一个object的field</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">public class PersonTest</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        //创建person类的对象 = 类的实例化</span><br><span class="line">        //每new一个object，heap里就多一个空间</span><br><span class="line">        Person p1 = new Person();</span><br><span class="line">        </span><br><span class="line">        //call object: object.field</span><br><span class="line">        p1.name = <span class="string">&quot;Tom&quot;</span>;</span><br><span class="line">        p1.isMale = <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        //call methods: object.method</span><br><span class="line">        p1.eat();</span><br><span class="line">        p1.sleep();</span><br><span class="line">        p1.talk(<span class="string">&quot;English&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        //**********************************</span><br><span class="line">        Person p2 = new Person();</span><br><span class="line">        System.out.println(p2.name); //null</span><br><span class="line">        System.out.println(p2.isMale); //<span class="literal">false</span> </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        //**********************************</span><br><span class="line">        //将P1变量保存的obejct address给p3，导致p1和p3指向了heap里的同一个block</span><br><span class="line">        Person p3 = p1;</span><br><span class="line">        System.out.println(p3.name); //Tom</span><br><span class="line">        </span><br><span class="line">        p3.age = 10;</span><br><span class="line">        System.out.println(p1.age); //10 </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    //属性 -&gt; field</span><br><span class="line">    String name;</span><br><span class="line">    int age = 1; //可以赋值也可以不赋值</span><br><span class="line">    boolean isMale;//default is <span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">    //方法 -&gt; method</span><br><span class="line">    public void eat()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People eat&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void sleep()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People sleep&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void talk(String language)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;People talk,</span></span><br><span class="line"><span class="string">        by speaking &quot;</span> + language);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/11/Java-basic-1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -637,6 +1031,151 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/CSE460-Lecture2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/11/CSE460-Lecture2/" class="post-title-link" itemprop="url">Software Analysis and Design Lecture 2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-01-11 16:35:06" itemprop="dateCreated datePublished" datetime="2021-01-11T16:35:06-07:00">2021-01-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-13 17:49:26" itemprop="dateModified" datetime="2021-01-13T17:49:26-07:00">2021-01-13</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Analysis-and-Design/" itemprop="url" rel="index"><span itemprop="name">Software Analysis and Design</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/11/CSE460-Lecture2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/11/CSE460-Lecture2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="Blueprint"><a href="#Blueprint" class="headerlink" title="Blueprint"></a>Blueprint</h3><p>A graphic description to create a <strong>specification</strong></p>
+<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ol>
+<li><p>Size: The number of components<br>tree: 3 lines of code, but more complexity<br>bubble sort: 10 lines of code</p>
+</li>
+<li><p>Abstraction<br>what is behind code? Eg: tree has less code but harder</p>
+</li>
+</ol>
+<h3 id="Problem-with-complexity"><a href="#Problem-with-complexity" class="headerlink" title="Problem with complexity"></a>Problem with complexity</h3><ol>
+<li><p>the more <strong>complex</strong> the system, the more open it is to total <strong>breakdown</strong>.</p>
+<pre><code> breakdown because of lack of -&gt; skill
+                                                   -&gt; communication</code></pre>
+</li>
+<li><p>software crisis: <strong>late</strong>, over <strong>budget</strong>, deficient satisfying requirements</p>
+</li>
+</ol>
+<p>Prototype, 1 person, limited purpose and short life span<br>Reuse, modify, extend software if needed, but don’t do in prototype</p>
+<h3 id="chanllenges"><a href="#chanllenges" class="headerlink" title="chanllenges"></a>chanllenges</h3><p><strong>Communication gap</strong> between the users and developers<br><strong>Trade-off</strong>: competing, contradictory, requirements<br><strong>Quality</strong>: usability, reliability, performance, cost</p>
+<p>Be a teammate or leader, one of the main responsibility<br>Management: keep the issusion of <strong>Simplicity</strong></p>
+<p>maximum number of <strong>chunks of information</strong>. 7 +- 2 things you can think in your brain at the same time</p>
+<h3 id="User-stories-amp-Use-cases"><a href="#User-stories-amp-Use-cases" class="headerlink" title="User stories &amp; Use cases"></a>User stories &amp; Use cases</h3><p><em>Independent</em> - loosely coupled with one another<br><em>Negotiable</em> - stories are what and why, not how<br><em>Value</em> - for the customer<br><em>Estimate</em> - effort.cost of design, build, test<br><em>Small</em> (size appropriately) 1 programmer and 1 week<br><em>Testable</em> - pass or fail</p>
+<p>“I want a pacman videogame” is <strong>Not</strong> a requirement</p>
+<p>Requirement:</p>
+<p><strong>Functional Requirement</strong></p>
+<ol>
+<li>Draw pacman   </li>
+<li>Move pacman   </li>
+</ol>
+<p>Quality &amp; Constraint is <strong>Non Functional Requirement</strong></p>
+<ol>
+<li>Use java to develop game</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Pacman</span><br><span class="line">&#123;</span><br><span class="line">    void paintComponent(graphic)</span><br><span class="line">    &#123;</span><br><span class="line">        g.drawOval(x,y,10)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">set</span> x();</span><br><span class="line">    <span class="built_in">set</span> y();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ____</span><br><span class="line">    m() ____x y</span><br><span class="line">&#123;    &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>Q: How many requirements approximately in pacman video games<br>A: 25 - 50 requirements<br>If less than 25, may be some lines need to be split. If combine two tasks, means we need 2 people to do, but 1 requirement only need 1 person.</p>
+
       
     </div>
 
@@ -880,601 +1419,10 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/09/CSE110-Assignment1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Skara-Brae">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/09/CSE110-Assignment1/" class="post-title-link" itemprop="url">CSE 110 - 1</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-01-09 12:20:32 / Modified: 14:13:13" itemprop="dateCreated datePublished" datetime="2021-01-09T12:20:32-07:00">2021-01-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Principles-of-Programming/" itemprop="url" rel="index"><span itemprop="name">Principles of Programming</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2021/01/09/CSE110-Assignment1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/09/CSE110-Assignment1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>5.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a><font size=5 color="#fc0303">Overview</font></h2><p>In this project we will write a program that will “fire” a cannonball at a mid-air target and determine if the cannonball hits the target or not. Five variables needed for this calculation will be provided by the user. Our program will do minor input validation on this input and will output the outcome of your calculations. See the diagram below for an example of what we are calculating.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/09/CSE110-Assignment1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/SinglyLinkedList/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Skara-Brae">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/04/SinglyLinkedList/" class="post-title-link" itemprop="url">Singly LinkedList</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-04 20:35:20" itemprop="dateCreated datePublished" datetime="2021-01-04T20:35:20-07:00">2021-01-04</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-05 02:21:42" itemprop="dateModified" datetime="2021-01-05T02:21:42-07:00">2021-01-05</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-Structure-and-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Data Structure and Algorithms</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2021/01/04/SinglyLinkedList/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/04/SinglyLinkedList/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>9.2k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>8 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Singly LinkedList 1</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/04/SinglyLinkedList/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q22-Generate%20Parentheses/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Skara-Brae">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/02/LeetCode-Q22-Generate%20Parentheses/" class="post-title-link" itemprop="url">LeetCode Q22 Generate Parentheses</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-02 02:45:20" itemprop="dateCreated datePublished" datetime="2021-01-02T02:45:20-07:00">2021-01-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-04 22:49:07" itemprop="dateModified" datetime="2021-01-04T22:49:07-07:00">2021-01-04</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2021/01/02/LeetCode-Q22-Generate%20Parentheses/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/02/LeetCode-Q22-Generate%20Parentheses/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>724</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p>
-<p>Example 1:</p>
-<p>Input: n = 3<br>Output: [“((()))”,”(()())”,”(())()”,”()(())”,”()()()”]<br>Example 2:</p>
-<p>Input: n = 1<br>Output: [“()”]</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/02/LeetCode-Q22-Generate%20Parentheses/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q21-Merge-Two-Sorted-Lists/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Skara-Brae">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/02/LeetCode-Q21-Merge-Two-Sorted-Lists/" class="post-title-link" itemprop="url">LeetCode Q21 Merge Two Sorted Lists</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-02 02:45:20" itemprop="dateCreated datePublished" datetime="2021-01-02T02:45:20-07:00">2021-01-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-04 22:58:15" itemprop="dateModified" datetime="2021-01-04T22:58:15-07:00">2021-01-04</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2021/01/02/LeetCode-Q21-Merge-Two-Sorted-Lists/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/02/LeetCode-Q21-Merge-Two-Sorted-Lists/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>709</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Merge two sorted linked lists and return it as a sorted list. The list should be made by splicing together the nodes of the first two lists.</p>
-<p>Input: l1 = [1,2,4], l2 = [1,3,4]<br>Output: [1,1,2,3,4,4]<br>Example 2:</p>
-<p>Input: l1 = [], l2 = []<br>Output: []<br>Example 3:</p>
-<p>Input: l1 = [], l2 = [0]<br>Output: [0]</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/02/LeetCode-Q21-Merge-Two-Sorted-Lists/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/02/LeetCode-Q20-Valid-Parentheses/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Skara-Brae">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/02/LeetCode-Q20-Valid-Parentheses/" class="post-title-link" itemprop="url">LeetCode Q20 Valid Parentheses</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-02 02:40:59" itemprop="dateCreated datePublished" datetime="2021-01-02T02:40:59-07:00">2021-01-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-09 15:14:21" itemprop="dateModified" datetime="2021-01-09T15:14:21-07:00">2021-01-09</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2021/01/02/LeetCode-Q20-Valid-Parentheses/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/02/LeetCode-Q20-Valid-Parentheses/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>括号匹配问题。<br>如果只有一种括号，我们完全可以用一个计数器 count ，遍历整个字符串，遇到左括号加 1 ，遇到右括号减 1，遍历结束后，如果 count 等于 0 ，则表示全部匹配。但如果有多种括号，像 ( [ ) ] 这种情况它依旧会得到 0，所以我们需要用其他的方法。</p>
-<p>Stack！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/02/LeetCode-Q20-Valid-Parentheses/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1526,13 +1474,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">30k</span>
+    <span title="Symbols count total">37k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">27 mins.</span>
+    <span title="Reading time total">34 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
