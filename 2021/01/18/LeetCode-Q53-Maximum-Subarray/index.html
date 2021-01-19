@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970class Solution &amp;#123;    public int lengthOfLongestSubstring(String s">
+  <meta name="description" content="Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. Example 1: Input: nums &#x3D; [-2,1,-3,4,-1,2,1,-5,4]Output: 6Explan">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode Q3 Longest Substring Without Repeating Characters">
-<meta property="og:url" content="http://example.com/2021/01/01/Leetcode-Q3-Longest-Substring-Without-Repeating-Characters/index.html">
+<meta property="og:title" content="LeetCode Q53 Maximum Subarray">
+<meta property="og:url" content="http://example.com/2021/01/18/LeetCode-Q53-Maximum-Subarray/index.html">
 <meta property="og:site_name" content="Skara-Brae">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970class Solution &amp;#123;    public int lengthOfLongestSubstring(String s">
+<meta property="og:description" content="Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. Example 1: Input: nums &#x3D; [-2,1,-3,4,-1,2,1,-5,4]Output: 6Explan">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-01T22:27:02.000Z">
-<meta property="article:modified_time" content="2021-01-04T04:03:17.116Z">
+<meta property="article:published_time" content="2021-01-19T06:17:38.000Z">
+<meta property="article:modified_time" content="2021-01-19T06:54:22.883Z">
 <meta property="article:author" content="Yuelin Zhao">
-<meta property="article:tag" content="HashMap">
+<meta property="article:tag" content="dynamic programming">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/01/01/Leetcode-Q3-Longest-Substring-Without-Repeating-Characters/">
+<link rel="canonical" href="http://example.com/2021/01/18/LeetCode-Q53-Maximum-Subarray/">
 
 
 <script class="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>Leetcode Q3 Longest Substring Without Repeating Characters | Skara-Brae</title>
+  <title>LeetCode Q53 Maximum Subarray | Skara-Brae</title>
   
 
 
@@ -283,7 +283,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/01/Leetcode-Q3-Longest-Substring-Without-Repeating-Characters/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/18/LeetCode-Q53-Maximum-Subarray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -296,7 +296,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Leetcode Q3 Longest Substring Without Repeating Characters
+          LeetCode Q53 Maximum Subarray
         </h1>
 
         <div class="post-meta-container">
@@ -306,16 +306,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-01-01 15:27:02" itemprop="dateCreated datePublished" datetime="2021-01-01T15:27:02-07:00">2021-01-01</time>
+      <time title="Created: 2021-01-18 23:17:38 / Modified: 23:54:22" itemprop="dateCreated datePublished" datetime="2021-01-18T23:17:38-07:00">2021-01-18</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-03 21:03:17" itemprop="dateModified" datetime="2021-01-03T21:03:17-07:00">2021-01-03</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -342,8 +336,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2021/01/01/Leetcode-Q3-Longest-Substring-Without-Repeating-Characters/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/01/Leetcode-Q3-Longest-Substring-Without-Repeating-Characters/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/01/18/LeetCode-Q53-Maximum-Subarray/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/18/LeetCode-Q53-Maximum-Subarray/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -355,7 +349,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1k</span>
+      <span>792</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -373,7 +367,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public int lengthOfLongestSubstring(String s) </span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; s: &quot;abcabcbb&quot;</span><br><span class="line">        </span><br><span class="line">        HashMap&lt;Character, Integer&gt; map &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">        &#x2F;&#x2F; s: &quot;abcabcbb&quot;</span><br><span class="line">           map: &#123;&#125; </span><br><span class="line">        </span><br><span class="line">        int ans &#x3D; 0;</span><br><span class="line">        &#x2F;&#x2F; s: &quot;abcabcbb&quot;</span><br><span class="line">           map: &#123;&#125;</span><br><span class="line">           ans: 0</span><br><span class="line">        </span><br><span class="line">        for(int i &#x3D; 0, j &#x3D; 0; j &lt; s.length(); j++)</span><br><span class="line">        &#123;</span><br><span class="line">        &#x2F;*</span><br><span class="line">        s: &quot;abcabcbb&quot;</span><br><span class="line">        map: &#123;&#125;</span><br><span class="line">        ans: 0</span><br><span class="line">        i: 0</span><br><span class="line">        j: 0</span><br><span class="line">        *&#x2F;</span><br><span class="line">            if(map.containsKey(s.charAt(j)))</span><br><span class="line">            &#123;</span><br><span class="line">                i &#x3D; Math.max(map.get(s.charAt(j)), i);</span><br><span class="line">            &#125;</span><br><span class="line">            ans &#x3D; Math.max(ans, j - i + 1);</span><br><span class="line">            &#x2F;*</span><br><span class="line">            s: &quot;abcabcbb&quot;</span><br><span class="line">            map: &#123;&#125;</span><br><span class="line">            ans: 1</span><br><span class="line">            i: 0</span><br><span class="line">            j: 0</span><br><span class="line">            *&#x2F;</span><br><span class="line">            </span><br><span class="line">            map.put(s.charAt(j), j + 1);</span><br><span class="line">            &#x2F;*</span><br><span class="line">            s: &quot;abcabcbb&quot;</span><br><span class="line">            map: &#123;&quot;a&quot;:1&#125;</span><br><span class="line">            ans: 1</span><br><span class="line">            i: 0</span><br><span class="line">            j: 0</span><br><span class="line">            *&#x2F;</span><br><span class="line">            </span><br><span class="line">            &#x2F;*</span><br><span class="line">            Second round</span><br><span class="line">            s: &quot;abcabcbb&quot;</span><br><span class="line">            map: &#123;&quot;a&quot;:1,&quot;b&quot;:2&#125;</span><br><span class="line">            ans: 2</span><br><span class="line">            i: 0</span><br><span class="line">            j: 1</span><br><span class="line">            *&#x2F;</span><br><span class="line">            </span><br><span class="line">            &#x2F;*</span><br><span class="line">            s: &quot;abcabcbb&quot;</span><br><span class="line">            map: &#123;&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3&#125;</span><br><span class="line">            ans: 3</span><br><span class="line">            i: 0</span><br><span class="line">            j: 2</span><br><span class="line">            *&#x2F;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p>Example 1:</p>
+<p>Input: nums = [-2,1,-3,4,-1,2,1,-5,4]<br>Output: 6<br>Explanation: [4,-1,2,1] has the largest sum = 6.</p>
+<a id="more"></a>
+<p>先用dp数组创建出一个与已给数组相同长度的array，并且全是0. 让dp array的第一个值为已给数组的第一个值，同时initialize max的值和dp第一个数字的值一样。for loop从第二个位置遍历已给数组，如果dp[ i ] 前面的值是负数，那么直接将已给数组的值加入进dp数组里。如果是正数就将dp[ i - 1] 与已给数组的nums[ i ] 相加，最后比较是max大，还是dp数组现在的这个值大</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">   public int maxSubArray(int[] nums) &#123;</span><br><span class="line">    int n &#x3D; nums.length;</span><br><span class="line">    int[] dp &#x3D; new int[n];</span><br><span class="line">    int max &#x3D; nums[0];</span><br><span class="line">    dp[0] &#x3D; nums[0];</span><br><span class="line">    for (int i &#x3D; 1; i &lt; n; i++) &#123;</span><br><span class="line">        &#x2F;&#x2F;两种情况更新 dp[i]</span><br><span class="line">        if (dp[i - 1] &lt; 0) &#123;</span><br><span class="line">            dp[i] &#x3D; nums[i];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            dp[i] &#x3D; dp[i - 1] + nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;更新 max</span><br><span class="line">        max &#x3D; Math.max(max, dp[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -383,21 +382,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/HashMap/" rel="tag"># HashMap</a>
+              <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/01/01/Leetcode%20Q2%20Add%20Two%20Numbers/" rel="prev" title="Leetcode Q2 Add Two Numbers">
-                  <i class="fa fa-chevron-left"></i> Leetcode Q2 Add Two Numbers
+                <a href="/2021/01/16/LeetCode-Q49-Group-Anagrams/" rel="prev" title="LeetCode Q49 Group Anagrams">
+                  <i class="fa fa-chevron-left"></i> LeetCode Q49 Group Anagrams
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/01/02/LeetCode-Q5-Longest-Palindromic-Substring/" rel="next" title="LeetCode Q5 Longest Palindromic Substring">
-                  LeetCode Q5 Longest Palindromic Substring <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -536,7 +532,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({"enable":true,"appId":"igYi1sgU8G1tlLCSMUuOf9PT-MdYXbMMI","appKey":"MwyoApzoDhreLXOxQKH8biy6","serverURLs":null,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"en, zh-cn","visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[]}, {
       el: '#valine-comments',
-      path: "/2021/01/01/Leetcode-Q3-Longest-Substring-Without-Repeating-Characters/",
+      path: "/2021/01/18/LeetCode-Q53-Maximum-Subarray/",
       serverURLs: "https://igyi1sgu.api.lncldglobal.com"
     }));
   }, window.Valine);

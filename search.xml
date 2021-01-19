@@ -722,4 +722,125 @@
         <tag>HashMap</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode Q53 Maximum Subarray</title>
+    <url>/2021/01/18/LeetCode-Q53-Maximum-Subarray/</url>
+    <content><![CDATA[<p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p>Example 1:</p>
+<p>Input: nums = [-2,1,-3,4,-1,2,1,-5,4]<br>Output: 6<br>Explanation: [4,-1,2,1] has the largest sum = 6.</p>
+<a id="more"></a>
+<p>先用dp数组创建出一个与已给数组相同长度的array，并且全是0. 让dp array的第一个值为已给数组的第一个值，同时initialize max的值和dp第一个数字的值一样。for loop从第二个位置遍历已给数组，如果dp[ i ] 前面的值是负数，那么直接将已给数组的值加入进dp数组里。如果是正数就将dp[ i - 1] 与已给数组的nums[ i ] 相加，最后比较是max大，还是dp数组现在的这个值大</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution</span><br><span class="line">&#123;</span><br><span class="line">   public int maxSubArray(int[] nums) &#123;</span><br><span class="line">    int n &#x3D; nums.length;</span><br><span class="line">    int[] dp &#x3D; new int[n];</span><br><span class="line">    int max &#x3D; nums[0];</span><br><span class="line">    dp[0] &#x3D; nums[0];</span><br><span class="line">    for (int i &#x3D; 1; i &lt; n; i++) &#123;</span><br><span class="line">        &#x2F;&#x2F;两种情况更新 dp[i]</span><br><span class="line">        if (dp[i - 1] &lt; 0) &#123;</span><br><span class="line">            dp[i] &#x3D; nums[i];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            dp[i] &#x3D; dp[i - 1] + nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;更新 max</span><br><span class="line">        max &#x3D; Math.max(max, dp[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>dynamic programming</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multimedia Information Systems Lecture 3</title>
+    <url>/2021/01/12/CSE408-Lecture-3/</url>
+    <content><![CDATA[<h3 id="Language-processing-NLP"><a href="#Language-processing-NLP" class="headerlink" title="Language processing ( NLP )"></a>Language processing ( NLP )</h3><ul>
+<li>a field of CS, AI, or tasks involved in human languages, such as human-machine communication</li>
+<li>Language involve many human activities, reading, writing, speaking</li>
+<li>ability to perform massibe amont of textual data         ( data mining )</li>
+</ul>
+<p>NLP applications:<br>advanced: speech recognition, machine translation.<br>basic: spelling, grammar</p>
+<p><strong>Natural language on the web</strong><br>basic components: text, links, graphic ( everything that is visual)<br>basic formating: text, links, graphic<br>Main container for document: page<br>performance: page<br>architecture: site<br>captions: highly stylize and associate with pictures</p>
+<p>Webpages</p>
+<ul>
+<li>contain all kinds of language, url, links…</li>
+</ul>
+<p><strong>Taxonomy vs. Folksonomy</strong><br>Taxonomy ( top- down )</p>
+<ul>
+<li>Hierachical   </li>
+<li>Exclusive : the same item cannot be in two distinct categories</li>
+</ul>
+<p>Folksonomy</p>
+<ul>
+<li>bottom-up</li>
+<li>not exlusive: an item can be associated to many tags</li>
+<li>flat</li>
+</ul>
+<p><strong>Linguistice concepts</strong></p>
+<ul>
+<li>language is a system of symbols with an agreed upon meaning that is used by people</li>
+<li>grammar is a set of rules</li>
+<li>syntax is the sentenced and their structure</li>
+<li>semantics is meaning of words, their relationships</li>
+<li>lexicon is the sum total of words in a language</li>
+<li>smiotics is the theory of signs and symbols</li>
+</ul>
+<p><strong>Ambiguity</strong></p>
+<ul>
+<li>Natural language is highly ambiguous and must be disambiguated</li>
+<li>Lexical ambiguity</li>
+<li>syntactic ambiguity</li>
+<li>referential amibituity</li>
+</ul>
+<p>Ambiguity is ubiquitous</p>
+<ul>
+<li>speech recognition, “younth in asia” vs “enthanasia”</li>
+<li>syntactic analysis “I ate noodle with chopstick” vs. “I ate noodle with metaballs”</li>
+<li>semantic analysis “The dog is in the pen” vs “the ink is in the pen”</li>
+</ul>
+<p><strong>Natural languages vs. computer languages</strong></p>
+<ul>
+<li>ambiguity is the primary difference </li>
+<li>programming language designed to be unambiguious</li>
+</ul>
+<p>Why is NLP hard</p>
+<ul>
+<li>language is hard even for human, one can see the complexity and degree of specialization of fields of linguistic</li>
+</ul>
+<p><strong>Word segmentation</strong></p>
+<ul>
+<li>A possible solutions is maximum matching, make sure find correct word by macthing. start by ponting the beginning of the string, then choose the longerest world in the dictionary to match</li>
+<li>Most successful word segmentation tools are based on machine learning techniques</li>
+<li>nltk.org is a python tool</li>
+</ul>
+<p><strong>Word level NLP</strong></p>
+<ul>
+<li>Remove ambiguity</li>
+<li>lexical analysis</li>
+<li>stop world removal </li>
+<li>stemming( fishing. fished, fish, fisher)</li>
+<li>lemmatization: stemming + content</li>
+<li>morphology (prefix)</li>
+</ul>
+<p><strong>Sentence Level NLP</strong></p>
+<ul>
+<li>syntax</li>
+<li>disambiguation ( polysemy, anaphora, )</li>
+<li>parsing</li>
+</ul>
+<p>Two levels in lexical semantics</p>
+<ul>
+<li>representing meaning of words</li>
+<li>word sense disambiguation</li>
+<li>composition semantics - to see how they combined and what that means</li>
+</ul>
+<p><strong>WordNet</strong></p>
+<ul>
+<li>semantics database for English</li>
+</ul>
+<p><strong>Question Answering</strong></p>
+<ul>
+<li>factoid<br>who, what, when</li>
+<li>non factoid<br>defination</li>
+</ul>
+<p><strong>TEXT summarization</strong></p>
+<ul>
+<li>give a piece of text, automatically make a summary satisfying required constrains</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Multimedia Information Systems</category>
+      </categories>
+      <tags>
+        <tag>CSE408</tag>
+      </tags>
+  </entry>
 </search>
