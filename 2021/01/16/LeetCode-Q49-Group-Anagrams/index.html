@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="BlueprintA graphic description to create a specification Complexity Size: The number of componentstree: 3 lines of code, but more complexitybubble sort: 10 lines of code  Abstractionwhat is behind cod">
+  <meta name="description" content="Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Software Analysis and Design Lecture 2">
-<meta property="og:url" content="http://example.com/2021/01/11/CSE460-Lecture2/index.html">
+<meta property="og:title" content="LeetCode Q49 Group Anagrams">
+<meta property="og:url" content="http://example.com/2021/01/16/LeetCode-Q49-Group-Anagrams/index.html">
 <meta property="og:site_name" content="Skara-Brae">
-<meta property="og:description" content="BlueprintA graphic description to create a specification Complexity Size: The number of componentstree: 3 lines of code, but more complexitybubble sort: 10 lines of code  Abstractionwhat is behind cod">
+<meta property="og:description" content="Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typ">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-11T23:35:06.000Z">
-<meta property="article:modified_time" content="2021-01-14T00:49:26.939Z">
+<meta property="article:published_time" content="2021-01-17T04:27:06.000Z">
+<meta property="article:modified_time" content="2021-01-17T19:44:57.862Z">
 <meta property="article:author" content="Yuelin Zhao">
-<meta property="article:tag" content="CSE460">
+<meta property="article:tag" content="HashMap">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/01/11/CSE460-Lecture2/">
+<link rel="canonical" href="http://example.com/2021/01/16/LeetCode-Q49-Group-Anagrams/">
 
 
 <script class="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>Software Analysis and Design Lecture 2 | Skara-Brae</title>
+  <title>LeetCode Q49 Group Anagrams | Skara-Brae</title>
   
 
 
@@ -197,7 +197,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active ">
+    <div class="sidebar-inner sidebar-overview-active ">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -209,7 +209,6 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Blueprint"><span class="nav-number">1.</span> <span class="nav-text">Blueprint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-number">2.</span> <span class="nav-text">Complexity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-with-complexity"><span class="nav-number">3.</span> <span class="nav-text">Problem with complexity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chanllenges"><span class="nav-number">4.</span> <span class="nav-text">chanllenges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-stories-amp-Use-cases"><span class="nav-number">5.</span> <span class="nav-text">User stories &amp; Use cases</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -284,7 +283,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/CSE460-Lecture2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/16/LeetCode-Q49-Group-Anagrams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -297,7 +296,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Software Analysis and Design Lecture 2
+          LeetCode Q49 Group Anagrams
         </h1>
 
         <div class="post-meta-container">
@@ -308,14 +307,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-01-11 16:35:06" itemprop="dateCreated datePublished" datetime="2021-01-11T16:35:06-07:00">2021-01-11</time>
+      <time title="Created: 2021-01-16 21:27:06" itemprop="dateCreated datePublished" datetime="2021-01-16T21:27:06-07:00">2021-01-16</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-13 17:49:26" itemprop="dateModified" datetime="2021-01-13T17:49:26-07:00">2021-01-13</time>
+        <time title="Modified: 2021-01-17 12:44:57" itemprop="dateModified" datetime="2021-01-17T12:44:57-07:00">2021-01-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -323,7 +322,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software-Analysis-and-Design/" itemprop="url" rel="index"><span itemprop="name">Software Analysis and Design</span></a>
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
         </span>
     </span>
 
@@ -343,8 +342,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2021/01/11/CSE460-Lecture2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/11/CSE460-Lecture2/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/01/16/LeetCode-Q49-Group-Anagrams/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/16/LeetCode-Q49-Group-Anagrams/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -356,7 +355,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.5k</span>
+      <span>960</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -374,41 +373,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="Blueprint"><a href="#Blueprint" class="headerlink" title="Blueprint"></a>Blueprint</h3><p>A graphic description to create a <strong>specification</strong></p>
-<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ol>
-<li><p>Size: The number of components<br>tree: 3 lines of code, but more complexity<br>bubble sort: 10 lines of code</p>
-</li>
-<li><p>Abstraction<br>what is behind code? Eg: tree has less code but harder</p>
-</li>
-</ol>
-<h3 id="Problem-with-complexity"><a href="#Problem-with-complexity" class="headerlink" title="Problem with complexity"></a>Problem with complexity</h3><ol>
-<li><p>the more <strong>complex</strong> the system, the more open it is to total <strong>breakdown</strong>.</p>
-<pre><code> breakdown because of lack of -&gt; skill
-                                                   -&gt; communication</code></pre>
-</li>
-<li><p>software crisis: <strong>late</strong>, over <strong>budget</strong>, deficient satisfying requirements</p>
-</li>
-</ol>
-<p>Prototype, 1 person, limited purpose and short life span<br>Reuse, modify, extend software if needed, but don’t do in prototype</p>
-<h3 id="chanllenges"><a href="#chanllenges" class="headerlink" title="chanllenges"></a>chanllenges</h3><p><strong>Communication gap</strong> between the users and developers<br><strong>Trade-off</strong>: competing, contradictory, requirements<br><strong>Quality</strong>: usability, reliability, performance, cost</p>
-<p>Be a teammate or leader, one of the main responsibility<br>Management: keep the issusion of <strong>Simplicity</strong></p>
-<p>maximum number of <strong>chunks of information</strong>. 7 +- 2 things you can think in your brain at the same time</p>
-<h3 id="User-stories-amp-Use-cases"><a href="#User-stories-amp-Use-cases" class="headerlink" title="User stories &amp; Use cases"></a>User stories &amp; Use cases</h3><p><em>Independent</em> - loosely coupled with one another<br><em>Negotiable</em> - stories are what and why, not how<br><em>Value</em> - for the customer<br><em>Estimate</em> - effort.cost of design, build, test<br><em>Small</em> (size appropriately) 1 programmer and 1 week<br><em>Testable</em> - pass or fail</p>
-<p>“I want a pacman videogame” is <strong>Not</strong> a requirement</p>
-<p>Requirement:</p>
-<p><strong>Functional Requirement</strong></p>
-<ol>
-<li>Draw pacman   </li>
-<li>Move pacman   </li>
-</ol>
-<p>Quality &amp; Constraint is <strong>Non Functional Requirement</strong></p>
-<ol>
-<li>Use java to develop game</li>
-<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Pacman</span><br><span class="line">&#123;</span><br><span class="line">    void paintComponent(graphic)</span><br><span class="line">    &#123;</span><br><span class="line">        g.drawOval(x,y,10)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">set</span> x();</span><br><span class="line">    <span class="built_in">set</span> y();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ____</span><br><span class="line">    m() ____x y</span><br><span class="line">&#123;    &#125;</span><br></pre></td></tr></table></figure>
+        <p>Given an array of strings strs, group the anagrams together. You can return the answer in any order.</p>
+<p>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
+<a id="more"></a>
 
-</li>
-</ol>
-<p>Q: How many requirements approximately in pacman video games<br>A: 25 - 50 requirements<br>If less than 25, may be some lines need to be split. If combine two tasks, means we need 2 people to do, but 1 requirement only need 1 person.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">    public List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) </span><br><span class="line">    &#123;</span><br><span class="line">        HashMap&lt;String, List&lt;String&gt;&gt; map &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">        &#x2F;&#x2F;主要思路是利用sort，将eat，ate，tea全部sort成aet</span><br><span class="line">        &#x2F;&#x2F;然后在hashmap里找，如果有相同的就加入map</span><br><span class="line">        for(int i &#x3D; 0; i &lt; strs.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            char[] letter &#x3D; strs[i].toCharArray();</span><br><span class="line">            Arrays.sort(letter);</span><br><span class="line">            String key &#x3D; String.valueOf(letter);</span><br><span class="line">        &#x2F;&#x2F;String ley store values sorted</span><br><span class="line">        &#x2F;&#x2F;key: &quot;aet&quot;</span><br><span class="line">            if(map.containsKey(key))</span><br><span class="line">            &#123;</span><br><span class="line">                map.get(key).add(strs[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                List&lt;String&gt; tempList &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">                tempList.add(strs[i]);</span><br><span class="line">                map.put(key, tempList);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return new ArrayList&lt;List&lt;String&gt;&gt;(map.values());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -418,21 +387,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/CSE460/" rel="tag"># CSE460</a>
+              <a href="/tags/HashMap/" rel="tag"># HashMap</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/01/11/CSE543-Lecture1/" rel="prev" title="Info Assurance & Security Lecture 1">
-                  <i class="fa fa-chevron-left"></i> Info Assurance & Security Lecture 1
+                <a href="/2021/01/15/LeetCode-Q48-Rotate-Image/" rel="prev" title="LeetCode Q48 Rotate Image">
+                  <i class="fa fa-chevron-left"></i> LeetCode Q48 Rotate Image
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/01/11/Software-Analysis-and-Design-Lecture-1/" rel="next" title="Software Analysis and Design Lecture 1">
-                  Software Analysis and Design Lecture 1 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -571,7 +537,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({"enable":true,"appId":"igYi1sgU8G1tlLCSMUuOf9PT-MdYXbMMI","appKey":"MwyoApzoDhreLXOxQKH8biy6","serverURLs":null,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"en, zh-cn","visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[]}, {
       el: '#valine-comments',
-      path: "/2021/01/11/CSE460-Lecture2/",
+      path: "/2021/01/16/LeetCode-Q49-Group-Anagrams/",
       serverURLs: "https://igyi1sgu.api.lncldglobal.com"
     }));
   }, window.Valine);
