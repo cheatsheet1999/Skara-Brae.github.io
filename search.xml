@@ -163,6 +163,7 @@
 <h3 id="Insert-images"><a href="#Insert-images" class="headerlink" title="Insert images"></a>Insert images</h3><p>Example:<br><img src="/images/jeremy-bishop-fhCD0DXhOUA-unsplash.jpg"></p>
 <h3 id="Insert-web-links"><a href="#Insert-web-links" class="headerlink" title="Insert web links"></a>Insert web links</h3><p>[Instruction] (<a href="https://www.jianshu.com/p/191d1e21f7ed">https://www.jianshu.com/p/191d1e21f7ed</a>)</p>
 <p><strong>html version</strong><br><a href="https://yuelinus.com" target="_blank">Skara-Brae</a></p>
+<h2 id="Preview-by-using-vscode"><a href="#Preview-by-using-vscode" class="headerlink" title="Preview by using vscode"></a><strong>Preview by using vscode</strong></h2><p>Command+Shift+V for MacOS<br>Ctrl+Shift+V    for windows</p>
 ]]></content>
       <categories>
         <category>Web Note</category>
@@ -423,6 +424,7 @@
     <title>Software Analysis and Design Lecture 2</title>
     <url>/2021/01/11/CSE460-Lecture2/</url>
     <content><![CDATA[<h3 id="Blueprint"><a href="#Blueprint" class="headerlink" title="Blueprint"></a>Blueprint</h3><p>A graphic description to create a <strong>specification</strong></p>
+<p><strong>Models</strong><br>give us the opportunity to fail</p>
 <h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ol>
 <li><p>Size: The number of components<br>tree: 3 lines of code, but more complexity<br>bubble sort: 10 lines of code</p>
 </li>
@@ -437,13 +439,32 @@
 <li><p>software crisis: <strong>late</strong>, over <strong>budget</strong>, deficient satisfying requirements</p>
 </li>
 </ol>
-<p>Prototype, 1 person, limited purpose and short life span<br>Reuse, modify, extend software if needed, but don’t do in prototype</p>
-<h3 id="chanllenges"><a href="#chanllenges" class="headerlink" title="chanllenges"></a>chanllenges</h3><p><strong>Communication gap</strong> between the users and developers<br><strong>Trade-off</strong>: competing, contradictory, requirements<br><strong>Quality</strong>: usability, reliability, performance, cost</p>
+<h3 id="Ignore-Complexity-When…"><a href="#Ignore-Complexity-When…" class="headerlink" title="Ignore Complexity When…"></a>Ignore Complexity When…</h3><ul>
+<li><p>Specified, constructed, maintained, and used by 1 person</p>
+</li>
+<li><p>Prototype, 1 person, limited purpose and short life span</p>
+</li>
+<li><p>Replace them with a new software, not reuse, modify, or extend softwar </p>
+</li>
+</ul>
+<h3 id="chanllenges"><a href="#chanllenges" class="headerlink" title="chanllenges"></a>chanllenges</h3><ul>
+<li><strong>Communication gap</strong> between the users and developers</li>
+<li><strong>Trade-ofs</strong>: competing, contradictory, requirements in the problem domain </li>
+<li><strong>Quality</strong>: usability, reliability, performance, cost</li>
+<li>Limied testing</li>
+<li>Labor-intensive vs Product lines</li>
+</ul>
 <p>Be a teammate or leader, one of the main responsibility<br>Management: keep the issusion of <strong>Simplicity</strong></p>
 <p>maximum number of <strong>chunks of information</strong>. 7 +- 2 things you can think in your brain at the same time</p>
-<h3 id="User-stories-amp-Use-cases"><a href="#User-stories-amp-Use-cases" class="headerlink" title="User stories &amp; Use cases"></a>User stories &amp; Use cases</h3><p><em>Independent</em> - loosely coupled with one another<br><em>Negotiable</em> - stories are what and why, not how<br><em>Value</em> - for the customer<br><em>Estimate</em> - effort.cost of design, build, test<br><em>Small</em> (size appropriately) 1 programmer and 1 week<br><em>Testable</em> - pass or fail</p>
+<h3 id="INVEST"><a href="#INVEST" class="headerlink" title="INVEST"></a>INVEST</h3><p><em>Independent</em> - loosely coupled with one another<br><em>Negotiable</em> - stories are what and why, not how<br><em>Value</em> - for the customer<br><em>Estimate</em> - effort.cost of design, build, test<br><em>Small</em> (size appropriately) 1 programmer and 1 week<br><em>Testable</em> - pass or fail</p>
 <p>“I want a pacman videogame” is <strong>Not</strong> a requirement</p>
-<p>Requirement:</p>
+<h3 id="Modeling-the-problem"><a href="#Modeling-the-problem" class="headerlink" title="Modeling the problem"></a>Modeling the problem</h3><ul>
+<li>Primitive components</li>
+<li>separation of concerns</li>
+<li>common patterns(relationships)</li>
+<li>hierarchic structure</li>
+<li>Incremental devlopment</li>
+</ul>
 <p><strong>Functional Requirement</strong></p>
 <ol>
 <li>Draw pacman   </li>
@@ -841,6 +862,54 @@
       </categories>
       <tags>
         <tag>CSE408</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSE460 Lecture 3</title>
+    <url>/2021/01/20/CSE460-Lecture-3/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Info Assurance &amp; Security Lecture 3</title>
+    <url>/2021/01/13/CSE543-Lecture-3/</url>
+    <content><![CDATA[<h3 id="Threats-and-Vulnerbilities"><a href="#Threats-and-Vulnerbilities" class="headerlink" title="Threats and Vulnerbilities"></a>Threats and Vulnerbilities</h3><p>strategies: specific goal we want to achieve<br>principle: high level</p>
+<ul>
+<li><strong>information</strong><br>telephone, records</li>
+</ul>
+<p>Information are not just computer information</p>
+<ul>
+<li>Threat is a <strong>potential occurrence</strong> that can have an undesirable effect on the system.</li>
+<li>A <strong>vulnerability</strong> is a weakness that makes a threat possibily occur, and there is not way to ensure no vulnerability</li>
+</ul>
+<h3 id="Four-categories-of-threats"><a href="#Four-categories-of-threats" class="headerlink" title="Four categories of threats"></a>Four categories of threats</h3><ul>
+<li>disclosure: Unauthorized access to information<ul>
+<li>snooping </li>
+</ul>
+</li>
+<li>deception: Acceptance of false data<ul>
+<li>altenation</li>
+<li>spoofing</li>
+<li>denial of receipt ( when we sent people a email, how to make sure we are sending to the right person? Using public and private keysg)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Security-principles"><a href="#Security-principles" class="headerlink" title="Security principles"></a>Security principles</h3><ul>
+<li><strong>Auditability</strong> and <strong>Accountability</strong><ul>
+<li><strong>Auditability</strong> is the ability to <strong>verify</strong> the activities of a <strong>control</strong></li>
+<li><strong>Accountability</strong> is to hold <strong>Individual answeable responsible or liable</strong></li>
+</ul>
+</li>
+<li><strong>Access Control</strong><ul>
+<li>Separation of functions - No one owns all process</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Info Assurance &amp; Security</category>
+      </categories>
+      <tags>
+        <tag>CSE543</tag>
       </tags>
   </entry>
 </search>
