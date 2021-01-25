@@ -219,14 +219,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -279,7 +279,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/20/CSE460-Lecture-3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/LeetCode-Q56-Merge-Intervals/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -293,7 +293,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/20/CSE460-Lecture-3/" class="post-title-link" itemprop="url">CSE460 Lecture 3</a>
+            <a href="/2021/01/25/LeetCode-Q56-Merge-Intervals/" class="post-title-link" itemprop="url">LeetCode Q56 Merge Intervals</a>
         </h2>
 
         <div class="post-meta-container">
@@ -303,8 +303,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-01-20 16:31:32" itemprop="dateCreated datePublished" datetime="2021-01-20T16:31:32-07:00">2021-01-20</time>
+      <time title="Created: 2021-01-25 11:13:14 / Modified: 14:18:13" itemprop="dateCreated datePublished" datetime="2021-01-25T11:13:14-07:00">2021-01-25</time>
     </span>
 
   
@@ -316,8 +317,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2021/01/20/CSE460-Lecture-3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/20/CSE460-Lecture-3/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/01/25/LeetCode-Q56-Merge-Intervals/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/25/LeetCode-Q56-Merge-Intervals/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -329,7 +330,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>0</span>
+      <span>652</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -347,7 +348,134 @@
     
     
     <div class="post-body" itemprop="articleBody">
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] merge(<span class="keyword">int</span>[][] intervals)</span><br><span class="line">    &#123;</span><br><span class="line">    </span><br><span class="line">        Arrays.sort(intervals, (a, b) -&gt; Integer.compare(a[<span class="number">0</span>], b[<span class="number">0</span>]));</span><br><span class="line">        LinkedList&lt;<span class="keyword">int</span>[]&gt; merged = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] interval : intervals) &#123;</span><br><span class="line">            <span class="comment">// if the list of merged intervals is empty or if the current</span></span><br><span class="line">            <span class="comment">// interval does not overlap with the previous, simply append it.</span></span><br><span class="line">            <span class="keyword">if</span> (merged.isEmpty() || merged.getLast()[<span class="number">1</span>] &lt; interval[<span class="number">0</span>]) &#123;</span><br><span class="line">                merged.add(interval);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// otherwise, there is overlap, so we merge the current and previous</span></span><br><span class="line">            <span class="comment">// intervals.</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                merged.getLast()[<span class="number">1</span>] = Math.max(merged.getLast()[<span class="number">1</span>], interval[<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> merged.toArray(<span class="keyword">new</span> <span class="keyword">int</span>[merged.size()][]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/24/LeetCode-Q55-Jump-Game/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuelin Zhao">
+      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skara-Brae">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
           
+            <a href="/2021/01/24/LeetCode-Q55-Jump-Game/" class="post-title-link" itemprop="url">LeetCode Q55 Jump Game</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-01-24 01:30:23" itemprop="dateCreated datePublished" datetime="2021-01-24T01:30:23-07:00">2021-01-24</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-25 00:28:22" itemprop="dateModified" datetime="2021-01-25T00:28:22-07:00">2021-01-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/24/LeetCode-Q55-Jump-Game/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/24/LeetCode-Q55-Jump-Game/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>912</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Given an array of non-negative integers <code>nums</code>, you are initially positioned at the <strong>first index</strong> of the array.</p>
+<p>Each element in the array represents your maximum jump length at that position.</p>
+<p>Determine if you are able to reach the last index.</p>
+<ul>
+<li>First, initialize <strong>end</strong> is 0, it makes sure that we jump to max position later.</li>
+<li>Initialize maxPosition = 0, it keep looking for max position</li>
+<li>Traverse the nums array</li>
+<li>if we ever found end is smaller than current index, that means nums[end] is 0, we return false</li>
+<li>Updating maxPostion, find max between maxPosition and current index + current number</li>
+<li>let end = maxPosition if we reach end</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canJump</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> maxPosition = <span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="comment">//当前更新超过了边界，那么意味着出现了 0 ，直接返回 false</span></span><br><span class="line">        <span class="keyword">if</span>(end &lt; i)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//找能跳的最远的 </span></span><br><span class="line">        maxPosition = Math.max(maxPosition, nums[i] + i);<span class="comment">//现在的数加上现在的index，表示了最远可以到第几步 </span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>( i == end)&#123; <span class="comment">//遇到边界，就更新边界，并且步数加一</span></span><br><span class="line">            end = maxPosition; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//最远的距离是否到答末尾</span></span><br><span class="line">    <span class="keyword">return</span> maxPosition&gt;=nums.length-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
       
     </div>
 
@@ -1292,148 +1420,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/CSE543-Lecture-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yuelin Zhao">
-      <meta itemprop="description" content="Master of Computer Science  Software Engineer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Skara-Brae">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/13/CSE543-Lecture-3/" class="post-title-link" itemprop="url">Info Assurance & Security Lecture 3</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-13 10:30:34" itemprop="dateCreated datePublished" datetime="2021-01-13T10:30:34-07:00">2021-01-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-20 11:38:25" itemprop="dateModified" datetime="2021-01-20T11:38:25-07:00">2021-01-20</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Info-Assurance-Security/" itemprop="url" rel="index"><span itemprop="name">Info Assurance & Security</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2021/01/13/CSE543-Lecture-3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/13/CSE543-Lecture-3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>760</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="Threats-and-Vulnerbilities"><a href="#Threats-and-Vulnerbilities" class="headerlink" title="Threats and Vulnerbilities"></a>Threats and Vulnerbilities</h3><p>strategies: specific goal we want to achieve<br>principle: high level</p>
-<ul>
-<li><strong>information</strong><br>telephone, records</li>
-</ul>
-<p>Information are not just computer information</p>
-<ul>
-<li>Threat is a <strong>potential occurrence</strong> that can have an undesirable effect on the system.</li>
-<li>A <strong>vulnerability</strong> is a weakness that makes a threat possibily occur, and there is not way to ensure no vulnerability</li>
-</ul>
-<h3 id="Four-categories-of-threats"><a href="#Four-categories-of-threats" class="headerlink" title="Four categories of threats"></a>Four categories of threats</h3><ul>
-<li>disclosure: Unauthorized access to information<ul>
-<li>snooping </li>
-</ul>
-</li>
-<li>deception: Acceptance of false data<ul>
-<li>altenation</li>
-<li>spoofing</li>
-<li>denial of receipt ( when we sent people a email, how to make sure we are sending to the right person? Using public and private keysg)</li>
-</ul>
-</li>
-</ul>
-<h3 id="Security-principles"><a href="#Security-principles" class="headerlink" title="Security principles"></a>Security principles</h3><ul>
-<li><strong>Auditability</strong> and <strong>Accountability</strong><ul>
-<li><strong>Auditability</strong> is the ability to <strong>verify</strong> the activities of a <strong>control</strong></li>
-<li><strong>Accountability</strong> is to hold <strong>Individual answeable responsible or liable</strong></li>
-</ul>
-</li>
-<li><strong>Access Control</strong><ul>
-<li>Separation of functions - No one owns all process</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
   
   <nav class="pagination">
@@ -1489,13 +1475,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">50k</span>
+    <span title="Symbols count total">54k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">45 mins.</span>
+    <span title="Reading time total">49 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
