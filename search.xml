@@ -292,59 +292,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Multimedia Information Systems Lecture 1, 2</title>
-    <url>/2021/01/12/CSE408-Lecture-1/</url>
-    <content><![CDATA[<h3 id="About-CSE-408"><a href="#About-CSE-408" class="headerlink" title="About CSE 408"></a>About CSE 408</h3><p>Description: the course deals with the design, use, and applications of multimedia information systems. An introduction to acquisition, processing, compression, storage, retrieval, and presentation of data from different media types such as images, text, voice, graphics, and alphanumeric.<br>• Learning objectives: master fundamental concepts, specific domain knowledge, applications, and current research topics.</p>
-<a id="more"></a>
-
-<h3 id="Topics-To-Be-Covered"><a href="#Topics-To-Be-Covered" class="headerlink" title="Topics To Be Covered"></a>Topics To Be Covered</h3><p>• Introduction to multimedia systems<br>• Web search<br>• Natural language processing<br>• Sound informatics<br>• Image &amp; video<br>• Compression algorithms and standards (JPEG, MPEG)<br>• Multimedia Information System design<br>• Data mining and artificial intelligence<br>• Data visualization<br>• Computer vision algorithms and applications<br>• Multimedia Information System performance evaluation</p>
-<h3 id="Multimedia-elements"><a href="#Multimedia-elements" class="headerlink" title="Multimedia elements"></a>Multimedia elements</h3><p>Audio -&gt; Video -&gt; Animation -&gt; Interactive -&gt; graphic -&gt; text</p>
-<h2 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h2><p>Assumption 1: A hyperlink between pages denotes author perceived relevance (quality signal)</p>
-<p>Assumption 2: The author of the hyperlink describes the target page (texual context)</p>
-<p>Q: how hard is it go from one page to another?<br>Over 75% of the time there is no directed path from one ranfom web page to another</p>
-<p>When a directed path exitsts, 16 clicks<br>When an undirected path exists its average 7 clicks</p>
-<p><strong>six degree of separation</strong> 你和任何一个陌生人之间所间隔的人不会超过六个</p>
-<h3 id="Information-retrieval"><a href="#Information-retrieval" class="headerlink" title="Information retrieval"></a>Information retrieval</h3><p><strong><em>Web search vs. Info retrieval</em></strong><br>• The scale of web search<br>• The web is very dynamic<br>•  The quality of web page is not uniform<br>•  Have to figure out which belong to the topic, range is wide</p>
-<p>Theree types of queires<br>Navigational: Ex: Facebook. Simply look the place you want to reach<br>Informational: what is age of CLINTON? very specific<br>Transacational: search for commercial nature, Eg: gut insurance quote</p>
-<p>There are more than 3.5M google searches every day<br>76% of global searches take place on google<br>60% are from mobile devices<br>80% of sarches were informational</p>
-<h3 id="The-anatomy-of-a-large-scale-hypertexual-web-search-engine"><a href="#The-anatomy-of-a-large-scale-hypertexual-web-search-engine" class="headerlink" title="The anatomy of a large-scale hypertexual web search engine"></a>The anatomy of a large-scale hypertexual web search engine</h3><p>Web searching: architecture<br>• Web crawler: first algorithm<br>a way to collect large data</p>
-<p>retireve the page, extract URL, update and repeat</p>
-<p><strong>Indexing the web Goals: precision</strong><br>short queries applied to very large numbers of items leads to large number of hits</p>
-<ul>
-<li>goal is that the first 10-100 hits should satisify users</li>
-<li>recall is not an important criterion</li>
-</ul>
-<p>completeness of index is not an important factot</p>
-<p><strong>Concept of relevance and importance</strong><br>Relevance</p>
-<ol>
-<li>involved documents similarity between terms in the query and each document</li>
-<li>location info, for use of proximity in multi-world search</li>
-<li>in page title, page url important</li>
-<li>font, color also considerd</li>
-</ol>
-<p>Importance: measures documents by their likelihood of being useful to a variety of users. popularity.</p>
-<p><strong>Inverted index</strong><br>• For each word: set of documents where it occurs<br>Take popular word in documents as a term</p>
-<h3 id="page-rank-algorithm"><a href="#page-rank-algorithm" class="headerlink" title="page rank algorithm"></a>page rank algorithm</h3><p>Used to estimate popularity of documents<br>if doc has more links to it, then more findable it is.</p>
-<p><strong>Intuitive model</strong><br>A user:</p>
-<ol>
-<li>starts at a random page on the web</li>
-<li>select random hyperlink from current page and jumps to the corresponding page</li>
-<li>repeat step 2 at a very large number of times.</li>
-</ol>
-<p>page are ranked according to the relative frequency with which they are visted </p>
-<p><strong>Basic algorithm</strong><br>• Matrix Representation<br>• Normalize by number of links from page<br>• weighting pages- initally all pages 1/n, recalculate weights<br>• iterate</p>
-<p>Random teleports<br>The google solution for spider traps</p>
-<p><strong>SIngle word query ranking</strong><br>• Assign weights</p>
-<p><strong>Multi-word query ranking</strong><br>Similar to single word but have to use proximity on the document</p>
-]]></content>
-      <categories>
-        <category>Multimedia Information Systems</category>
-      </categories>
-      <tags>
-        <tag>CSE408</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java basic 1</title>
     <url>/2021/01/11/Java-basic-1/</url>
     <content><![CDATA[<h3 id="Array-copy"><a href="#Array-copy" class="headerlink" title="Array copy"></a>Array copy</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">int[] array1, array2;</span><br><span class="line">array1 = new int[] &#123;2,3,5,7,8,9,12,11,10&#125;;</span><br><span class="line"></span><br><span class="line">//copy array1 to array2</span><br><span class="line">array2 = new int[array1.length];</span><br><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; array2.length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    array2[i] = array1[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -426,11 +373,11 @@
     <content><![CDATA[<h3 id="Blueprint"><a href="#Blueprint" class="headerlink" title="Blueprint"></a>Blueprint</h3><p>A graphic description to create a <strong>specification</strong></p>
 <p><strong>Models</strong><br>give us the opportunity to fail</p>
 <h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ol>
-<li><p>Size: The number of components<br>tree: 3 lines of code, but more complexity<br>bubble sort: 10 lines of code</p>
-</li>
-<li><p>Abstraction<br>what is behind code? Eg: tree has less code but harder</p>
-</li>
+<li>Size: The number of components<br>tree: 3 lines of code, but more complexity<br>bubble sort: 10 lines of code</li>
+<li>Abstraction<br>what is behind code? Eg: tree has less code but harder</li>
 </ol>
+<a id="more"></a>
+
 <h3 id="Problem-with-complexity"><a href="#Problem-with-complexity" class="headerlink" title="Problem with complexity"></a>Problem with complexity</h3><ol>
 <li><p>the more <strong>complex</strong> the system, the more open it is to total <strong>breakdown</strong>.</p>
 <pre><code> breakdown because of lack of -&gt; skill
@@ -902,62 +849,29 @@
 <li>test bullet</li>
 <li>Test</li>
 </ul>
+<p><strong>Q&amp;A session</strong></p>
+<p>What is key tasks of NLP systems/algorithm</p>
+<ul>
+<li>disambiguition</li>
+</ul>
+<p>what is the difference between the connectivity matrix and the normalized connectivity matrix?</p>
+<ul>
+<li>sum fof columns on normaized is 1</li>
+</ul>
+<p>what is polysemy?</p>
+<ul>
+<li>related words that have multiple meanings</li>
+</ul>
+<p>difference between Text categorization and text clustering?</p>
+<ul>
+<li>categorization the label are in advance</li>
+</ul>
 ]]></content>
       <categories>
         <category>Multimedia Information Systems</category>
       </categories>
       <tags>
         <tag>CSE408</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Software Analysis and Design Lecture 3</title>
-    <url>/2021/01/11/CSE460-Lecture-3/</url>
-    <content><![CDATA[<p>Requirements is not necessities</p>
-<p>Requirement interact with tasks -&gt; stps<br>i.e. Pacman video game involved requirement </p>
-<p>Use case diagram is used to represent requirements</p>
-<p>Activity Diagram: sequence of something, condition, loop<br>State diagram</p>
-<a id="more"></a>
-
-<h3 id="Functional"><a href="#Functional" class="headerlink" title="Functional"></a>Functional</h3><p>i.e.<br>Ensure normal song is played when no pellets are eaten</p>
-<ul>
-<li><p>what the software do </p>
-</li>
-<li><p>Basically if you have to program it, it’s functional</p>
-</li>
-<li><p>if its not a <strong>constraint</strong> then its functional</p>
-</li>
-</ul>
-<p>anything the software will do is considered a functional requirement</p>
-<h3 id="Non-fuctional"><a href="#Non-fuctional" class="headerlink" title="Non-fuctional"></a>Non-fuctional</h3><p>we may still need to code,<br>non fuctional is about  <strong>quality</strong></p>
-<p>i.e.</p>
-<ol>
-<li>Add multi-device functionality (mouse/keyboard, controller)</li>
-</ol>
-<h3 id="Not-a-requirement"><a href="#Not-a-requirement" class="headerlink" title="Not a requirement"></a>Not a requirement</h3><ul>
-<li><p>Ages 3+ should be able to play the game and easily figure out the baisc movement of pac-man<br>(<strong>Hard to test, out of devlopers’ responsibility</strong>)</p>
-</li>
-<li><p>Code for the actual Pac-Man game need to be well documented and clear enough<br>(<strong>Not valuable for customer</strong>)</p>
-</li>
-<li><p>Program must always load “properly”<br>(<strong>If related to quality, be more specific</strong>)</p>
-</li>
-<li><p>Add a timer to the <em>previous functionality</em> that decreases per round<br>(<strong>Violet independent</strong>)</p>
-</li>
-</ul>
-<h3 id="WHAT-vs-HOW"><a href="#WHAT-vs-HOW" class="headerlink" title="WHAT vs. HOW"></a>WHAT vs. HOW</h3><ul>
-<li><p>Ask users what they need, not how to do that</p>
-</li>
-<li><p>Customer: I need a PacMan game</p>
-</li>
-<li><p>Developer: classes…functions…</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Software Analysis and Design</category>
-      </categories>
-      <tags>
-        <tag>CSE460</tag>
       </tags>
   </entry>
   <entry>
@@ -1060,5 +974,146 @@
     <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] merge(<span class="keyword">int</span>[][] intervals)</span><br><span class="line">    &#123;</span><br><span class="line">    </span><br><span class="line">        Arrays.sort(intervals, (a, b) -&gt; Integer.compare(a[<span class="number">0</span>], b[<span class="number">0</span>]));</span><br><span class="line">        LinkedList&lt;<span class="keyword">int</span>[]&gt; merged = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] interval : intervals) &#123;</span><br><span class="line">            <span class="comment">// if the list of merged intervals is empty or if the current</span></span><br><span class="line">            <span class="comment">// interval does not overlap with the previous, simply append it.</span></span><br><span class="line">            <span class="keyword">if</span> (merged.isEmpty() || merged.getLast()[<span class="number">1</span>] &lt; interval[<span class="number">0</span>]) &#123;</span><br><span class="line">                merged.add(interval);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// otherwise, there is overlap, so we merge the current and previous</span></span><br><span class="line">            <span class="comment">// intervals.</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                merged.getLast()[<span class="number">1</span>] = Math.max(merged.getLast()[<span class="number">1</span>], interval[<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> merged.toArray(<span class="keyword">new</span> <span class="keyword">int</span>[merged.size()][]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>Algo Two Number Sum</title>
+    <url>/2021/01/29/Algo-Two-Number-Sum/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Program</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] twoNumberSum(<span class="keyword">int</span>[] array, <span class="keyword">int</span> targetSum) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; array.length; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(array[i] + array[j] == targetSum)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;array[i], array[j]&#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>Time complexity O(n^2)</strong></p>
+<hr>
+<p><strong>HashMap</strong> Time complexity O(n)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Program</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] twoNumberSum(<span class="keyword">int</span>[] array, <span class="keyword">int</span> targetSum) &#123;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; nums = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num : array)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> ans = targetSum - num;</span><br><span class="line">            <span class="keyword">if</span>(nums.containsKey(ans))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;ans, num&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                nums.put(num,num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>AlgoExpert</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multimedia Information Systems Lecture 1, 2</title>
+    <url>/2021/01/12/CSE408-Lecture-1,2/</url>
+    <content><![CDATA[<h3 id="About-CSE-408"><a href="#About-CSE-408" class="headerlink" title="About CSE 408"></a>About CSE 408</h3><p>Description: the course deals with the design, use, and applications of multimedia information systems. An introduction to acquisition, processing, compression, storage, retrieval, and presentation of data from different media types such as images, text, voice, graphics, and alphanumeric.<br>• Learning objectives: master fundamental concepts, specific domain knowledge, applications, and current research topics.</p>
+<a id="more"></a>
+
+<h3 id="Topics-To-Be-Covered"><a href="#Topics-To-Be-Covered" class="headerlink" title="Topics To Be Covered"></a>Topics To Be Covered</h3><p>• Introduction to multimedia systems<br>• Web search<br>• Natural language processing<br>• Sound informatics<br>• Image &amp; video<br>• Compression algorithms and standards (JPEG, MPEG)<br>• Multimedia Information System design<br>• Data mining and artificial intelligence<br>• Data visualization<br>• Computer vision algorithms and applications<br>• Multimedia Information System performance evaluation</p>
+<h3 id="Multimedia-elements"><a href="#Multimedia-elements" class="headerlink" title="Multimedia elements"></a>Multimedia elements</h3><p>Audio -&gt; Video -&gt; Animation -&gt; Interactive -&gt; graphic -&gt; text</p>
+<h2 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h2><p>Assumption 1: A hyperlink between pages denotes author perceived relevance (quality signal)</p>
+<p>Assumption 2: The author of the hyperlink describes the target page (texual context)</p>
+<p>Q: how hard is it go from one page to another?<br>Over 75% of the time there is no directed path from one ranfom web page to another</p>
+<p>When a directed path exitsts, 16 clicks<br>When an undirected path exists its average 7 clicks</p>
+<p><strong>six degree of separation</strong> 你和任何一个陌生人之间所间隔的人不会超过六个</p>
+<h3 id="Information-retrieval"><a href="#Information-retrieval" class="headerlink" title="Information retrieval"></a>Information retrieval</h3><p><strong><em>Web search vs. Info retrieval</em></strong><br>• The scale of web search<br>• The web is very dynamic<br>•  The quality of web page is not uniform<br>•  Have to figure out which belong to the topic, range is wide</p>
+<p>Theree types of queires<br>Navigational: Ex: Facebook. Simply look the place you want to reach<br>Informational: what is age of CLINTON? very specific<br>Transacational: search for commercial nature, Eg: gut insurance quote</p>
+<p>There are more than 3.5M google searches every day<br>76% of global searches take place on google<br>60% are from mobile devices<br>80% of sarches were informational</p>
+<h3 id="The-anatomy-of-a-large-scale-hypertexual-web-search-engine"><a href="#The-anatomy-of-a-large-scale-hypertexual-web-search-engine" class="headerlink" title="The anatomy of a large-scale hypertexual web search engine"></a>The anatomy of a large-scale hypertexual web search engine</h3><p>Web searching: architecture<br>• Web crawler: first algorithm<br>a way to collect large data</p>
+<p>retireve the page, extract URL, update and repeat</p>
+<p><strong>Indexing the web Goals: precision</strong><br>short queries applied to very large numbers of items leads to large number of hits</p>
+<ul>
+<li>goal is that the first 10-100 hits should satisify users</li>
+<li>recall is not an important criterion</li>
+</ul>
+<p>completeness of index is not an important factot</p>
+<p><strong>Concept of relevance and importance</strong><br>Relevance</p>
+<ol>
+<li>involved documents similarity between terms in the query and each document</li>
+<li>location info, for use of proximity in multi-world search</li>
+<li>in page title, page url important</li>
+<li>font, color also considerd</li>
+</ol>
+<p>Importance: measures documents by their likelihood of being useful to a variety of users. popularity.</p>
+<p><strong>Inverted index</strong><br>• For each word: set of documents where it occurs<br>Take popular word in documents as a term</p>
+<h3 id="page-rank-algorithm"><a href="#page-rank-algorithm" class="headerlink" title="page rank algorithm"></a>page rank algorithm</h3><p>Used to estimate popularity of documents<br>if doc has more links to it, then more findable it is.</p>
+<p><strong>Intuitive model</strong><br>A user:</p>
+<ol>
+<li>starts at a random page on the web</li>
+<li>select random hyperlink from current page and jumps to the corresponding page</li>
+<li>repeat step 2 at a very large number of times.</li>
+</ol>
+<p>page are ranked according to the relative frequency with which they are visted </p>
+<p><strong>Basic algorithm</strong><br>• Matrix Representation<br>• Normalize by number of links from page<br>• weighting pages- initally all pages 1/n, recalculate weights<br>• iterate</p>
+<p>Random teleports<br>The google solution for spider traps</p>
+<p><strong>SIngle word query ranking</strong><br>• Assign weights</p>
+<p><strong>Multi-word query ranking</strong><br>Similar to single word but have to use proximity on the document</p>
+]]></content>
+      <categories>
+        <category>Multimedia Information Systems</category>
+      </categories>
+      <tags>
+        <tag>CSE408</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Software Analysis and Design Lecture 3, 4, 5</title>
+    <url>/2021/01/11/CSE460-Lecture-3,4,5/</url>
+    <content><![CDATA[<p>Requirements is not necessities</p>
+<p>Requirement interact with tasks -&gt; stps<br>i.e. Pacman video game involved requirement </p>
+<p>Use case diagram is used to represent requirements</p>
+<p>Activity Diagram: sequence of something, condition, loop<br>State diagram</p>
+<a id="more"></a>
+
+<h3 id="Functional"><a href="#Functional" class="headerlink" title="Functional"></a>Functional</h3><p>i.e.<br>Ensure normal song is played when no pellets are eaten</p>
+<ul>
+<li><p>what the software do </p>
+</li>
+<li><p>Basically if you have to program it, it’s functional</p>
+</li>
+<li><p>if its not a <strong>constraint</strong> then its functional</p>
+</li>
+</ul>
+<p>anything the software will do is considered a functional requirement</p>
+<h3 id="Non-fuctional"><a href="#Non-fuctional" class="headerlink" title="Non-fuctional"></a>Non-fuctional</h3><p>we may still need to code,<br>non fuctional is about  <strong>quality</strong></p>
+<p>i.e.</p>
+<ol>
+<li>Add multi-device functionality (mouse/keyboard, controller)</li>
+</ol>
+<h3 id="Not-a-requirement"><a href="#Not-a-requirement" class="headerlink" title="Not a requirement"></a>Not a requirement</h3><ul>
+<li><p>Ages 3+ should be able to play the game and easily figure out the baisc movement of pac-man<br>(<strong>Hard to test, out of devlopers’ responsibility</strong>)</p>
+</li>
+<li><p>Code for the actual Pac-Man game need to be well documented and clear enough<br>(<strong>Not valuable for customer</strong>)</p>
+</li>
+<li><p>Program must always load “properly”<br>(<strong>If related to quality, be more specific</strong>)</p>
+</li>
+<li><p>Add a timer to the <em>previous functionality</em> that decreases per round<br>(<strong>Violet independent</strong>)</p>
+</li>
+</ul>
+<h3 id="WHAT-vs-HOW"><a href="#WHAT-vs-HOW" class="headerlink" title="WHAT vs. HOW"></a>WHAT vs. HOW</h3><ul>
+<li>Ask users what they need, not how to do that</li>
+<li>Customer: I need a PacMan game</li>
+<li>Developer: classes…functions…</li>
+</ul>
+<p><strong>Storyboarding</strong></p>
+<p>who? -&gt; actor</p>
+<ol>
+<li>pacman = player</li>
+<li>Ghost = enemy = system = AI</li>
+</ol>
+<p><strong>Each oval is a requirements</strong></p>
+<p><strong>Each person is  an actor</strong></p>
+<h2 id="LECTURE-5"><a href="#LECTURE-5" class="headerlink" title="LECTURE 5"></a>LECTURE 5</h2><p>Use case diagram is most important, sequence and state diagram is used to help on details</p>
+<p><strong>Activities</strong></p>
+<ul>
+<li>what is an activity: steps, actions in particular conditions, loops</li>
+<li>what is the difference between activity and requirement?</li>
+</ul>
+<p>Activity is <strong>not</strong> equal to requirement.</p>
+<p>Activity diagram represents <strong>Algorithm</strong></p>
+<p>requirements are comprised of steps/actions</p>
+<p>if requirement is dish, activity is elements inside dish.</p>
+<p><strong>State diagram</strong> (no diamonds. every line has text on it, activity diagram is not )</p>
+<ul>
+<li><p>States, represents as box. the information in the box is value for something</p>
+</li>
+<li><p>Event is a line, to exhibit some predictable from of behavior</p>
+<p><strong>state diagram and state machine diagram are the same</strong></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Software Analysis and Design</category>
+      </categories>
+      <tags>
+        <tag>CSE460</tag>
+      </tags>
   </entry>
 </search>
