@@ -359,6 +359,20 @@
 <h3 id="Call-Field-in-Object"><a href="#Call-Field-in-Object" class="headerlink" title="Call Field in Object"></a>Call Field in Object</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">// member variable VS <span class="built_in">local</span> variable</span><br><span class="line">1.相同点：</span><br><span class="line">    1.1 定义variable的格式，data <span class="built_in">type</span>， variable name</span><br><span class="line">    1.2 先声明，后使用</span><br><span class="line">    1.3 都有scope</span><br><span class="line"></span><br><span class="line">2.不同点：</span><br><span class="line">    2.1 在class中intialize的位置不同</span><br><span class="line">    field: 直接定义在class的一对&#123;&#125;里</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">local</span> variable: 在method内，method arguments， constructor arguments, variable inside constructor 都是<span class="built_in">local</span> variable出现的位置</span><br><span class="line">    </span><br><span class="line">    2.2 Access modifiers</span><br><span class="line">    member variable 可以在声明时，指明权限</span><br><span class="line">    常用的access modifiers</span><br><span class="line">    private, public, protected, default</span><br><span class="line">    </span><br><span class="line">    2.3 Default values</span><br><span class="line">    (byte, short, int, long): 0</span><br><span class="line">    (<span class="built_in">float</span>, double) 0.0</span><br><span class="line">    (char) 0 (or <span class="string">&#x27;\u0000&#x27;</span>)</span><br><span class="line">    (boolean), <span class="literal">false</span></span><br><span class="line">    reference data <span class="built_in">type</span>: null</span><br><span class="line"></span><br><span class="line">class User</span><br><span class="line">&#123;</span><br><span class="line">    // 2.1 field OR member variable OR instance variable</span><br><span class="line">    </span><br><span class="line">    String name;</span><br><span class="line">    int age;</span><br><span class="line">    bool isMale;</span><br><span class="line">    </span><br><span class="line">    // language is an arguments</span><br><span class="line">    //所以是<span class="built_in">local</span> variable</span><br><span class="line">    public void talk(String language)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;We use &quot;</span> + language);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void eat()</span><br><span class="line">    &#123;</span><br><span class="line">        //定义在method内的variable，是<span class="built_in">local</span> variable</span><br><span class="line">        //不能加public 或者 private</span><br><span class="line">        //因为是<span class="built_in">local</span> variable，方法是public，里面的<span class="built_in">local</span> variable就也是public了</span><br><span class="line">        String food = <span class="string">&quot;taco&quot;</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;We like &quot;</span> + food);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Access-modifiers"><a href="#Access-modifiers" class="headerlink" title="Access modifiers"></a>Access modifiers</h3><p>member variable 可以在声明时，指明权限<br>常用的access modifiers<br>private, public, protected, default<br>*(Encapsulation)*</p>
 <p>Local variable cannot use access modifier</p>
+<h3 id="Find-index-of-min-and-max-value-in-an-array"><a href="#Find-index-of-min-and-max-value-in-an-array" class="headerlink" title="Find  index of min and max value in an array"></a>Find  index of min and max value in an array</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Scanner scan = new Scanner(System.in);</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringPractice01</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">         Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">         <span class="keyword">int</span>[] array = &#123;<span class="number">4</span>,<span class="number">2</span>,-<span class="number">7</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">1</span>,-<span class="number">7</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> min_index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; array.length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(array[min_index] &gt; array[j])</span><br><span class="line">            &#123;</span><br><span class="line">               min_index = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(array[min_index] == array[i])</span><br><span class="line">            &#123;</span><br><span class="line">                min_index = i;</span><br><span class="line">                System.out.println(min_index);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       System.out.println(array[min_index]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Selection-sort"><a href="#Selection-sort" class="headerlink" title="Selection sort"></a>Selection sort</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">8</span>,<span class="number">3</span>&#125;;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++)</span><br><span class="line">       &#123;</span><br><span class="line">            <span class="keyword">int</span> min = arr[i];</span><br><span class="line">            <span class="keyword">int</span> index = i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[j] &lt; min)</span><br><span class="line">                &#123;</span><br><span class="line">                    min = arr[j];</span><br><span class="line">                    index = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(index != i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">                arr[i] = arr[index];</span><br><span class="line">                arr[index] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">       &#123;</span><br><span class="line">           System.out.print(arr[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Two-D-array"><a href="#Two-D-array" class="headerlink" title="Two-D array"></a>Two-D array</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">       1</span></span><br><span class="line"><span class="comment">       2,2</span></span><br><span class="line"><span class="comment">       3,3,3</span></span><br><span class="line"><span class="comment">       4,4,4,4</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">       <span class="keyword">int</span> num = scan.nextInt();</span><br><span class="line">       <span class="keyword">int</span>[][] arr;</span><br><span class="line">       arr = <span class="keyword">new</span> <span class="keyword">int</span>[num][];</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">       &#123;</span><br><span class="line">           arr[i] = <span class="keyword">new</span> <span class="keyword">int</span>[i + <span class="number">1</span>];</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++)</span><br><span class="line">           &#123;</span><br><span class="line">               arr[i][j] = i + <span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++)</span><br><span class="line">           &#123;</span><br><span class="line">               System.out.print(arr[i][j]);</span><br><span class="line">           &#125;</span><br><span class="line">           System.out.println();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Income-and-outcome-management"><a href="#Income-and-outcome-management" class="headerlink" title="Income and outcome management"></a>Income and outcome management</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Scanner scan = new Scanner(System.in);</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringPractice01</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">      <span class="keyword">int</span> choice;</span><br><span class="line">      <span class="keyword">double</span> deposite = <span class="number">10000</span>;</span><br><span class="line">      String details = <span class="string">&quot;Income\tbalance\tAmount\tInfo\n&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="keyword">do</span> &#123;</span><br><span class="line">          System.out.println(<span class="string">&quot;\t\t1. Income and outcome&quot;</span>);</span><br><span class="line">          System.out.println(<span class="string">&quot;\t\t2. Register income&quot;</span>);</span><br><span class="line">          System.out.println(<span class="string">&quot;\t\t3. Register outcome&quot;</span>);</span><br><span class="line">          System.out.println(<span class="string">&quot;\t\t4. Quit&quot;</span>);</span><br><span class="line">          choice = scan.nextInt();;</span><br><span class="line">          <span class="keyword">switch</span> (choice)</span><br><span class="line">          &#123;</span><br><span class="line">              <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                  System.out.println(<span class="string">&quot;You have $ &quot;</span> + deposite);</span><br><span class="line">                  System.out.println(details);</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">              <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                  System.out.println(<span class="string">&quot;Please enter your earned&quot;</span>);</span><br><span class="line">                  <span class="keyword">double</span> money = scan.nextDouble();</span><br><span class="line">                  System.out.println(<span class="string">&quot;Please where the money from&quot;</span>);</span><br><span class="line">                  String info = scan.next();</span><br><span class="line">                  deposite += money;</span><br><span class="line">                  details += <span class="string">&quot;Earned\t&quot;</span> + money + <span class="string">&quot;\t&quot;</span> + deposite</span><br><span class="line">                          + info + <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">              <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                  System.out.println(<span class="string">&quot;Please Register outcome&quot;</span>);</span><br><span class="line">                  money = scan.nextDouble();</span><br><span class="line">                  System.out.println(<span class="string">&quot;Please where the money goes&quot;</span>);</span><br><span class="line">                  info = scan.next();</span><br><span class="line">                  deposite -= money;</span><br><span class="line">                  details += <span class="string">&quot;Spent\t&quot;</span> + money + <span class="string">&quot;\t&quot;</span> + deposite</span><br><span class="line">                          + info + <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">              <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                  System.out.println(<span class="string">&quot;Sure to quit ? Y/N&quot;</span>);</span><br><span class="line">                  <span class="keyword">char</span> select = scan.next().charAt(<span class="number">0</span>);</span><br><span class="line">                  <span class="keyword">if</span>(select == <span class="string">&#x27;Y&#x27;</span>)</span><br><span class="line">                  &#123;</span><br><span class="line">                      choice = -<span class="number">1</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">                  <span class="keyword">else</span></span><br><span class="line">                  &#123;</span><br><span class="line">                      <span class="keyword">break</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;<span class="keyword">while</span>(choice != -<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Java Basic</category>
@@ -708,173 +722,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Multimedia Information Systems Lecture 3</title>
-    <url>/2021/01/12/CSE408-Lecture-3/</url>
-    <content><![CDATA[<h3 id="Language-processing-NLP"><a href="#Language-processing-NLP" class="headerlink" title="Language processing ( NLP )"></a>Language processing ( NLP )</h3><ul>
-<li>a field of CS, AI, or tasks involved in human languages, such as human-machine communication</li>
-<li>Language involve many human activities, reading, writing, speaking</li>
-<li>ability to perform massibe amont of textual data         ( data mining )</li>
-</ul>
-<p>NLP applications:<br>advanced: speech recognition, machine translation.<br>basic: spelling, grammar</p>
-<p><strong>Natural language on the web</strong><br>basic components: text, links, graphic ( everything that is visual)<br>basic formating: text, links, graphic<br>Main container for document: page<br>performance: page<br>architecture: site<br>captions: highly stylize and associate with pictures</p>
-<p>Webpages</p>
-<ul>
-<li>contain all kinds of language, url, links…</li>
-</ul>
-<p><strong>Taxonomy vs. Folksonomy</strong><br>Taxonomy ( top- down )</p>
-<ul>
-<li>Hierachical   </li>
-<li>Exclusive : the same item cannot be in two distinct categories</li>
-</ul>
-<p>Folksonomy</p>
-<ul>
-<li>bottom-up</li>
-<li>not exlusive: an item can be associated to many tags</li>
-<li>flat</li>
-</ul>
-<p><strong>Linguistice concepts</strong></p>
-<ul>
-<li>language is a system of symbols with an agreed upon meaning that is used by people</li>
-<li>grammar is a set of rules</li>
-<li>syntax is the sentenced and their structure</li>
-<li>semantics is meaning of words, their relationships</li>
-<li>lexicon is the sum total of words in a language</li>
-<li>smiotics is the theory of signs and symbols</li>
-</ul>
-<p><strong>Ambiguity</strong></p>
-<ul>
-<li>Natural language is highly ambiguous and must be disambiguated</li>
-<li>Lexical ambiguity</li>
-<li>syntactic ambiguity</li>
-<li>referential amibituity</li>
-</ul>
-<p>Ambiguity is ubiquitous</p>
-<ul>
-<li>speech recognition, “younth in asia” vs “enthanasia”</li>
-<li>syntactic analysis “I ate noodle with chopstick” vs. “I ate noodle with metaballs”</li>
-<li>semantic analysis “The dog is in the pen” vs “the ink is in the pen”</li>
-</ul>
-<p><strong>Natural languages vs. computer languages</strong></p>
-<ul>
-<li>ambiguity is the primary difference </li>
-<li>programming language designed to be unambiguious</li>
-</ul>
-<p>Why is NLP hard</p>
-<ul>
-<li>language is hard even for human, one can see the complexity and degree of specialization of fields of linguistic</li>
-</ul>
-<p><strong>Word segmentation</strong></p>
-<ul>
-<li>A possible solutions is maximum matching, make sure find correct word by macthing. start by ponting the beginning of the string, then choose the longerest world in the dictionary to match</li>
-<li>Most successful word segmentation tools are based on machine learning techniques</li>
-<li>nltk.org is a python tool</li>
-</ul>
-<p><strong>Word level NLP</strong></p>
-<ul>
-<li>Remove ambiguity</li>
-<li>lexical analysis</li>
-<li>stop world removal </li>
-<li>stemming( fishing. fished, fish, fisher)</li>
-<li>lemmatization: stemming + content</li>
-<li>morphology (prefix)</li>
-</ul>
-<p><strong>Sentence Level NLP</strong></p>
-<ul>
-<li>syntax</li>
-<li>disambiguation ( polysemy, anaphora, )</li>
-<li>parsing</li>
-</ul>
-<p>Two levels in lexical semantics</p>
-<ul>
-<li>representing meaning of words</li>
-<li>word sense disambiguation</li>
-<li>composition semantics - to see how they combined and what that means</li>
-</ul>
-<p><strong>WordNet</strong></p>
-<ul>
-<li>semantics database for English</li>
-</ul>
-<p><strong>Question Answering</strong></p>
-<ul>
-<li>factoid<br>who, what, when</li>
-<li>non factoid<br>defination</li>
-</ul>
-<p><strong>TEXT summarization</strong></p>
-<ul>
-<li>give a piece of text, automatically make a summary satisfying required constrains</li>
-</ul>
-<h3 id="Document-clustering"><a href="#Document-clustering" class="headerlink" title="Document clustering"></a>Document clustering</h3><ul>
-<li>How to organize a large set of documents of various topics</li>
-</ul>
-<p><strong>Classification methods</strong></p>
-<ol>
-<li>manual classification</li>
-<li>Rule-based<ul>
-<li>There are IDE type development</li>
-</ul>
-</li>
-</ol>
-<h4 id="Document-Vectores"><a href="#Document-Vectores" class="headerlink" title="Document Vectores"></a>Document Vectores</h4><ul>
-<li><strong>Focuments are represented as “bags of words”</strong></li>
-<li><strong>Represented as vectores when used computationally</strong></li>
-</ul>
-<p><strong>Similarity between documents</strong></p>
-<ul>
-<li>Sum of sqaured of documents</li>
-<li>Angle between vectores</li>
-</ul>
-<h3 id="Document-categories"><a href="#Document-categories" class="headerlink" title="Document categories"></a>Document categories</h3><ul>
-<li><p>The categories are just symbolic</p>
-</li>
-<li><p>Data: labeled instanced</p>
-<ul>
-<li>Traning data</li>
-<li>Held-out Data</li>
-<li>Test data</li>
-</ul>
-</li>
-<li><p>Features: attribute-value pairs which characterize each X</p>
-</li>
-<li><p>Experimentation cycle</p>
-<ul>
-<li>learn parameters</li>
-<li>tune hyperparameters on held-out set</li>
-<li>Compute accuracy of test set</li>
-<li>Very important: never “peek” at the test set</li>
-</ul>
-</li>
-</ul>
-<h3 id="kNN-classification"><a href="#kNN-classification" class="headerlink" title="kNN classification"></a>kNN classification</h3><ul>
-<li>kNN = k nearest neighbors</li>
-<li>test bullet</li>
-<li>Test</li>
-</ul>
-<p><strong>Q&amp;A session</strong></p>
-<p>What is key tasks of NLP systems/algorithm</p>
-<ul>
-<li>disambiguition</li>
-</ul>
-<p>what is the difference between the connectivity matrix and the normalized connectivity matrix?</p>
-<ul>
-<li>sum fof columns on normaized is 1</li>
-</ul>
-<p>what is polysemy?</p>
-<ul>
-<li>related words that have multiple meanings</li>
-</ul>
-<p>difference between Text categorization and text clustering?</p>
-<ul>
-<li>categorization the label are in advance</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Multimedia Information Systems</category>
-      </categories>
-      <tags>
-        <tag>CSE408</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Info Assurance &amp; Security Lecture 3,4</title>
     <url>/2021/01/13/CSE543-Lecture-3/</url>
     <content><![CDATA[<h3 id="Threats-and-Vulnerbilities"><a href="#Threats-and-Vulnerbilities" class="headerlink" title="Threats and Vulnerbilities"></a>Threats and Vulnerbilities</h3><p>strategies: specific goal we want to achieve<br>principle: high level</p>
@@ -1044,8 +891,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Software Analysis and Design Lecture 3, 4, 5</title>
-    <url>/2021/01/11/CSE460-Lecture-3,4,5/</url>
+    <title>Software Analysis and Design Lecture 3, 4, 5，6</title>
+    <url>/2021/01/11/CSE460-Lecture-3,4,5%EF%BC%8C6/</url>
     <content><![CDATA[<p>Requirements is not necessities</p>
 <p>Requirement interact with tasks -&gt; stps<br>i.e. Pacman video game involved requirement </p>
 <p>Use case diagram is used to represent requirements</p>
@@ -1100,7 +947,8 @@
 <p>Activity diagram represents <strong>Algorithm</strong></p>
 <p>requirements are comprised of steps/actions</p>
 <p>if requirement is dish, activity is elements inside dish.</p>
-<p><strong>State diagram</strong> (no diamonds. every line has text on it, activity diagram is not )</p>
+<p>**State diagram: every lines has text on it, has no diamonds **</p>
+<p><strong>Activity diagram has diamonds, not neccessary has text above line</strong></p>
 <ul>
 <li><p>States, represents as box. the information in the box is value for something</p>
 </li>
@@ -1108,12 +956,234 @@
 <p><strong>state diagram and state machine diagram are the same</strong></p>
 </li>
 </ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="Lecture-6"><a href="#Lecture-6" class="headerlink" title="Lecture 6"></a>Lecture 6</h2><ul>
+<li><p>Object-oriented analysis is a method of analysis that examines <strong>requirements</strong>  from the persepective of the <strong>classes and objects</strong></p>
+<ul>
+<li><strong>(Inheritance, composition, association)</strong></li>
+</ul>
+</li>
+<li><p>Object-oriented design is a method of <strong>implementation</strong></p>
+</li>
+</ul>
+<p><strong>Inheritance</strong>: The arrow point to B, so B is parent</p>
+<p><strong>Composition / aggregation</strong>: Black diamond is composition, white diamond is aggregation. white diamond, optional. Black diamond, something that must hav</p>
+<p><strong>Association</strong>: has <strong>arrow</strong> a —-&gt; b means a calls b’s method</p>
+<p>——–x means static</p>
+<p>~ means protected</p>
+<h2 id="Lecture-7-Objected-Oriented-II"><a href="#Lecture-7-Objected-Oriented-II" class="headerlink" title="Lecture 7 Objected Oriented II"></a>Lecture 7 Objected Oriented II</h2><p>**Class diagrams **</p>
+<ul>
+<li><p>modifiers</p>
+</li>
+<li><p>attributes  </p>
+</li>
+<li><p>methods</p>
+<p>(+ - )</p>
+</li>
+</ul>
+<p><strong>Relationships</strong></p>
+<ul>
+<li>Association / Dependency (<strong>Use</strong>)</li>
+<li>Aggregation / composition (<strong>has</strong>)</li>
+<li>Generalization / specialization/ realization ( Inhertence: <strong>is</strong>)</li>
+</ul>
+<p>Represent <strong>Class a is using Class b</strong></p>
+<ul>
+<li>Solid line bewteen them (Association)</li>
+<li>No arrows means a is using b, and b is using a</li>
+<li>Usually we place an arrowhead, a point to b means a is using b.</li>
+</ul>
+<h3 id="Association"><a href="#Association" class="headerlink" title="Association"></a>Association</h3><ul>
+<li>Use relationship, it can be two direction or single direction, depends on whether it has arrow. With arrow, only one direction, Student -&gt; book means student uses book.</li>
+</ul>
+<h3 id="Aggregation-Composition"><a href="#Aggregation-Composition" class="headerlink" title="Aggregation / Composition"></a><strong>Aggregation / Composition</strong></h3><ul>
+<li>White diamond is aggregation (optional)</li>
+<li>Black diamond is composition (necessary)</li>
+<li>Diamond point to the <strong>Owner</strong>, i.e. Car have engine, black diamond point to <strong>Car</strong></li>
+<li>If I <strong>new Object</strong>, that is a black diamond.</li>
+</ul>
+<h3 id="Generalization-Realization-Specialization"><a href="#Generalization-Realization-Specialization" class="headerlink" title="Generalization / Realization/ Specialization"></a>Generalization / Realization/ Specialization</h3><p><strong>Generalization **represent **Inheritance</strong> : Tiger is a animal,  <strong>a solid line, traingle point to person</strong> means Student is a person,</p>
+<p><strong>Realization</strong>: The relationship between class and interface, represent class is the realization of features  of the inteface. <strong>Dash line with traingle arrow head</strong></p>
+<p>We can use inheritance between two interfaces, using solid line, and keywords “extends”</p>
+<p><strong>Q/A:</strong> Inheritance from parent to child interface <strong>No</strong></p>
 ]]></content>
       <categories>
         <category>Software Analysis and Design</category>
       </categories>
       <tags>
         <tag>CSE460</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multimedia Information Systems Lecture 3,4,5</title>
+    <url>/2021/01/12/CSE408-Lecture-3,4,5/</url>
+    <content><![CDATA[<h3 id="Language-processing-NLP"><a href="#Language-processing-NLP" class="headerlink" title="Language processing ( NLP )"></a>Language processing ( NLP )</h3><ul>
+<li>a field of CS, AI, or tasks involved in human languages, such as human-machine communication</li>
+<li>Language involve many human activities, reading, writing, speaking</li>
+<li>ability to perform massibe amont of textual data         ( data mining )</li>
+</ul>
+<p>NLP applications:<br>advanced: speech recognition, machine translation.<br>basic: spelling, grammar</p>
+<p><strong>Natural language on the web</strong><br>basic components: text, links, graphic ( everything that is visual)<br>basic formating: text, links, graphic<br>Main container for document: page<br>performance: page<br>architecture: site<br>captions: highly stylize and associate with pictures</p>
+<a id="more"></a>
+
+<p>Webpages</p>
+<ul>
+<li>contain all kinds of language, url, links…</li>
+</ul>
+<p><strong>Taxonomy vs. Folksonomy</strong><br>Taxonomy ( top- down )</p>
+<ul>
+<li>Hierachical   </li>
+<li>Exclusive : the same item cannot be in two distinct categories</li>
+</ul>
+<p>Folksonomy</p>
+<ul>
+<li>bottom-up</li>
+<li>not exlusive: an item can be associated to many tags</li>
+<li>flat</li>
+</ul>
+<p><strong>Linguistice concepts</strong></p>
+<ul>
+<li>language is a system of symbols with an agreed upon meaning that is used by people</li>
+<li>grammar is a set of rules</li>
+<li>syntax is the sentenced and their structure</li>
+<li>semantics is meaning of words, their relationships</li>
+<li>lexicon is the sum total of words in a language</li>
+<li>smiotics is the theory of signs and symbols</li>
+</ul>
+<p><strong>Ambiguity</strong></p>
+<ul>
+<li>Natural language is highly ambiguous and must be disambiguated</li>
+<li>Lexical ambiguity</li>
+<li>syntactic ambiguity</li>
+<li>referential amibituity</li>
+</ul>
+<p>Ambiguity is ubiquitous</p>
+<ul>
+<li>speech recognition, “younth in asia” vs “enthanasia”</li>
+<li>syntactic analysis “I ate noodle with chopstick” vs. “I ate noodle with metaballs”</li>
+<li>semantic analysis “The dog is in the pen” vs “the ink is in the pen”</li>
+</ul>
+<p><strong>Natural languages vs. computer languages</strong></p>
+<ul>
+<li>ambiguity is the primary difference </li>
+<li>programming language designed to be unambiguious</li>
+</ul>
+<p>Why is NLP hard</p>
+<ul>
+<li>language is hard even for human, one can see the complexity and degree of specialization of fields of linguistic</li>
+</ul>
+<p><strong>Word segmentation</strong></p>
+<ul>
+<li>A possible solutions is maximum matching, make sure find correct word by macthing. start by ponting the beginning of the string, then choose the longerest world in the dictionary to match</li>
+<li>Most successful word segmentation tools are based on machine learning techniques</li>
+<li>nltk.org is a python tool</li>
+</ul>
+<p><strong>Word level NLP</strong></p>
+<ul>
+<li>Remove ambiguity</li>
+<li>lexical analysis</li>
+<li>stop world removal </li>
+<li>stemming( fishing. fished, fish, fisher)</li>
+<li>lemmatization: stemming + content</li>
+<li>morphology (prefix)</li>
+</ul>
+<p><strong>Sentence Level NLP</strong></p>
+<ul>
+<li>syntax</li>
+<li>disambiguation ( polysemy, anaphora, )</li>
+<li>parsing</li>
+</ul>
+<p>Two levels in lexical semantics</p>
+<ul>
+<li>representing meaning of words</li>
+<li>word sense disambiguation</li>
+<li>composition semantics - to see how they combined and what that means</li>
+</ul>
+<p><strong>WordNet</strong></p>
+<ul>
+<li>semantics database for English</li>
+</ul>
+<p><strong>Question Answering</strong></p>
+<ul>
+<li>factoid<br>who, what, when</li>
+<li>non factoid<br>defination</li>
+</ul>
+<p><strong>TEXT summarization</strong></p>
+<ul>
+<li>give a piece of text, automatically make a summary satisfying required constrains</li>
+</ul>
+<h3 id="Document-clustering"><a href="#Document-clustering" class="headerlink" title="Document clustering"></a>Document clustering</h3><ul>
+<li>How to organize a large set of documents of various topics</li>
+</ul>
+<p><strong>Classification methods</strong></p>
+<ol>
+<li>manual classification</li>
+<li>Rule-based<ul>
+<li>There are IDE type development</li>
+</ul>
+</li>
+</ol>
+<h4 id="Document-Vectores"><a href="#Document-Vectores" class="headerlink" title="Document Vectores"></a>Document Vectores</h4><ul>
+<li><strong>Focuments are represented as “bags of words”</strong></li>
+<li><strong>Represented as vectores when used computationally</strong></li>
+</ul>
+<p><strong>Similarity between documents</strong></p>
+<ul>
+<li>Sum of sqaured of documents</li>
+<li>Angle between vectores</li>
+</ul>
+<h3 id="Document-categories"><a href="#Document-categories" class="headerlink" title="Document categories"></a>Document categories</h3><ul>
+<li><p>The categories are just symbolic</p>
+</li>
+<li><p>Data: labeled instanced</p>
+<ul>
+<li>Traning data</li>
+<li>Held-out Data</li>
+<li>Test data</li>
+</ul>
+</li>
+<li><p>Features: attribute-value pairs which characterize each X</p>
+</li>
+<li><p>Experimentation cycle</p>
+<ul>
+<li>learn parameters</li>
+<li>tune hyperparameters on held-out set</li>
+<li>Compute accuracy of test set</li>
+<li>Very important: never “peek” at the test set</li>
+</ul>
+</li>
+</ul>
+<h3 id="kNN-classification"><a href="#kNN-classification" class="headerlink" title="kNN classification"></a>kNN classification</h3><ul>
+<li>kNN = k nearest neighbors</li>
+<li>test bullet</li>
+<li>Test</li>
+</ul>
+<p><strong>Q&amp;A session</strong></p>
+<p>What is key tasks of NLP systems/algorithm</p>
+<ul>
+<li>disambiguition</li>
+</ul>
+<p>what is the difference between the connectivity matrix and the normalized connectivity matrix?</p>
+<ul>
+<li>sum fof columns on normaized is 1</li>
+</ul>
+<p>what is polysemy?</p>
+<ul>
+<li>related words that have multiple meanings</li>
+</ul>
+<p>difference between Text categorization and text clustering?</p>
+<ul>
+<li>categorization the label are in advance</li>
+</ul>
+<h2 id="Lecture-6"><a href="#Lecture-6" class="headerlink" title="Lecture 6"></a>Lecture 6</h2><ul>
+<li>Amptitude</li>
+<li>Frequency </li>
+</ul>
+]]></content>
+      <categories>
+        <category>Multimedia Information Systems</category>
+      </categories>
+      <tags>
+        <tag>CSE408</tag>
       </tags>
   </entry>
 </search>
