@@ -929,7 +929,10 @@
 <li>Customer: I need a PacMan game</li>
 <li>Developer: classes…functions…</li>
 </ul>
-<p><strong>Storyboarding</strong></p>
+<h2 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h2><h3 id="Use-case-Diagrams"><a href="#Use-case-Diagrams" class="headerlink" title="Use case Diagrams"></a>Use case Diagrams</h3><p><strong>Use case: **put the **title</strong> of one requirement inside.</p>
+<p><strong>Use cases</strong> capture requirements.</p>
+<p><strong>Actor</strong> –put the <strong>name</strong> of an actor at the bottom side.</p>
+<p>An <strong>actor</strong> specifies a <strong>role</strong> played by an <strong>external entity</strong></p>
 <p>who? -&gt; actor</p>
 <ol>
 <li>pacman = player</li>
