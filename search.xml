@@ -140,10 +140,9 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>Markdown Grammar / Web Delopyment</title>
     <url>/2020/10/04/hello-world/</url>
-    <content><![CDATA[<p>title: Markdown Grammar / Web Delopyment<br>categories: Web Note<br>date: 2020-10-04 23:10:29<br>tags: Web </p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
+    <content><![CDATA[<h2 id="tags-Web"><a href="#tags-Web" class="headerlink" title="tags: Web "></a>tags: Web </h2><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -165,7 +164,7 @@
 <h3 id="Insert-web-links"><a href="#Insert-web-links" class="headerlink" title="Insert web links"></a>Insert web links</h3><p>[Instruction] (<a href="https://www.jianshu.com/p/191d1e21f7ed">https://www.jianshu.com/p/191d1e21f7ed</a>)</p>
 <p><strong>html version</strong><br><a href="https://yuelinus.com" target="_blank">Skara-Brae</a></p>
 <h2 id="Preview-by-using-vscode"><a href="#Preview-by-using-vscode" class="headerlink" title="Preview by using vscode"></a><strong>Preview by using vscode</strong></h2><p>Command+Shift+V for MacOS<br>Ctrl+Shift+V    for windows</p>
-<h4 id="在复制的哔哩哔哩链接中输入以下代码方可兼容页面"><a href="#在复制的哔哩哔哩链接中输入以下代码方可兼容页面" class="headerlink" title="在复制的哔哩哔哩链接中输入以下代码方可兼容页面"></a><strong>在复制的哔哩哔哩链接中输入以下代码方可兼容页面</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">copystyle&#x3D;&quot;width: 100%; height: 500px; max-width: 100%；align:center; padding:20px 0;&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="在复制的哔哩哔哩链接中输入以下代码方可兼容页面"><a href="#在复制的哔哩哔哩链接中输入以下代码方可兼容页面" class="headerlink" title="在复制的哔哩哔哩链接中输入以下代码方可兼容页面"></a><strong>在复制的哔哩哔哩链接中输入以下代码方可兼容页面</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">style&#x3D;&quot;width: 100%; height: 500px; max-width: 100%；align:center; padding:20px 0;&quot;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=626357031&amp;bvid=BV1yt4y1Q7SS&amp;cid=210738676&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;style=&quot;width: 100%; height: 500px; max-width: 100%；align:center; padding:20px 0;&quot;&gt; &lt;/iframe&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -174,6 +173,9 @@
 <iframe src="//player.bilibili.com/player.html?aid=626357031&bvid=BV1yt4y1Q7SS&cid=210738676&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"style="width= 100%; height: 500px; max-width: 100%；align:center; padding:20px 0;"> </iframe>
 
 ]]></content>
+      <categories>
+        <category>Web Note</category>
+      </categories>
   </entry>
   <entry>
     <title>Singly LinkedList</title>
