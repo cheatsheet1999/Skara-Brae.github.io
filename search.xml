@@ -142,7 +142,7 @@
   <entry>
     <title>Markdown Grammar / Web Delopyment</title>
     <url>/2020/10/04/hello-world/</url>
-    <content><![CDATA[<h2 id="tags-Web"><a href="#tags-Web" class="headerlink" title="tags: Web "></a>tags: Web </h2><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
+    <content><![CDATA[<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -176,6 +176,9 @@
       <categories>
         <category>Web Note</category>
       </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
   </entry>
   <entry>
     <title>Singly LinkedList</title>
