@@ -853,32 +853,53 @@
 
 <h3 id="Topics-To-Be-Covered"><a href="#Topics-To-Be-Covered" class="headerlink" title="Topics To Be Covered"></a>Topics To Be Covered</h3><p>• Introduction to multimedia systems<br>• Web search<br>• Natural language processing<br>• Sound informatics<br>• Image &amp; video<br>• Compression algorithms and standards (JPEG, MPEG)<br>• Multimedia Information System design<br>• Data mining and artificial intelligence<br>• Data visualization<br>• Computer vision algorithms and applications<br>• Multimedia Information System performance evaluation</p>
 <h3 id="Multimedia-elements"><a href="#Multimedia-elements" class="headerlink" title="Multimedia elements"></a>Multimedia elements</h3><p>Audio -&gt; Video -&gt; Animation -&gt; Interactive -&gt; graphic -&gt; text</p>
+<p><strong>What is Multimedia?</strong></p>
+<p>Multimedia is content that uses a combination of different content forms such as text, audio, images. amiation, video and inteactive content. </p>
+<p><strong>Ex: a web-based video editor that lets anyone create a new video by editing, annotating and reminxing videos on the cloud</strong></p>
+<ul>
+<li>digital media- usually recorded, displayed, or accessed using electronic devices</li>
+</ul>
+<p><strong>Multimedia research Topics and projects</strong></p>
+<ol>
+<li>Multimedia processign and coding</li>
+<li>multimedia system suppory and networking</li>
+<li>Multimedia tools, end-systems and applications</li>
+<li>Multi-model interaction and integration</li>
+</ol>
 <h2 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h2><p>Assumption 1: A hyperlink between pages denotes author perceived relevance (quality signal)</p>
 <p>Assumption 2: The author of the hyperlink describes the target page (texual context)</p>
 <p>Q: how hard is it go from one page to another?<br>Over 75% of the time there is no directed path from one ranfom web page to another</p>
 <p>When a directed path exitsts, 16 clicks<br>When an undirected path exists its average 7 clicks</p>
 <p><strong>six degree of separation</strong> 你和任何一个陌生人之间所间隔的人不会超过六个</p>
-<h3 id="Information-retrieval"><a href="#Information-retrieval" class="headerlink" title="Information retrieval"></a>Information retrieval</h3><p><strong><em>Web search vs. Info retrieval</em></strong><br>• The scale of web search<br>• The web is very dynamic<br>•  The quality of web page is not uniform<br>•  Have to figure out which belong to the topic, range is wide</p>
-<p>Theree types of queires<br>Navigational: Ex: Facebook. Simply look the place you want to reach<br>Informational: what is age of CLINTON? very specific<br>Transacational: search for commercial nature, Eg: gut insurance quote</p>
-<p>There are more than 3.5M google searches every day<br>76% of global searches take place on google<br>60% are from mobile devices<br>80% of sarches were informational</p>
-<h3 id="The-anatomy-of-a-large-scale-hypertexual-web-search-engine"><a href="#The-anatomy-of-a-large-scale-hypertexual-web-search-engine" class="headerlink" title="The anatomy of a large-scale hypertexual web search engine"></a>The anatomy of a large-scale hypertexual web search engine</h3><p>Web searching: architecture<br>• Web crawler: first algorithm<br>a way to collect large data</p>
-<p>retireve the page, extract URL, update and repeat</p>
-<p><strong>Indexing the web Goals: precision</strong><br>short queries applied to very large numbers of items leads to large number of hits</p>
-<ul>
-<li>goal is that the first 10-100 hits should satisify users</li>
-<li>recall is not an important criterion</li>
+<h3 id="Information-retrieval"><a href="#Information-retrieval" class="headerlink" title="Information retrieval"></a>Information retrieval</h3><ul>
+<li>IR is the science of searching for documents, info within documents…</li>
 </ul>
-<p>completeness of index is not an important factot</p>
+<p><strong>Web search vs. Info retrieval</strong></p>
+<ul>
+<li>The web contains a lot of duplication</li>
+</ul>
+<p>• The scale of web search is way beyond traditional information retrieval<br>• The web is very dynamic<br>•  The quality of web page is not uniform<br>•  Have to figure out which belong to the topic, range is wide</p>
+<p><strong>Three types of queires</strong><br>Navigational: Ex: Facebook. Simply look the place you want to reach<br>Informational: what is age of CLINTON? very specific<br>Transacational: search for commercial nature, Eg: gut insurance quote</p>
+<p>There are more than 3.5B google searches every day<br>76% of global searches take place on google<br>60% are from mobile devices<br>80% of sarches were informational</p>
+<h3 id="The-anatomy-of-a-large-scale-hypertexual-web-search-engine"><a href="#The-anatomy-of-a-large-scale-hypertexual-web-search-engine" class="headerlink" title="The anatomy of a large-scale hypertexual web search engine"></a>The anatomy of a large-scale hypertexual web search engine</h3><p>Web searching: architecture<br>Web crawler: first algorithm<br>a way to collect large data</p>
+<p>retireve the page, extract URL, update and repeat</p>
+<h3 id="Web-searching-Architecture"><a href="#Web-searching-Architecture" class="headerlink" title="Web searching: Architecture"></a>Web searching: Architecture</h3><ul>
+<li>Documents stored on many Web servers are indexed in a single central index</li>
+<li>The central index is implemented as a single system on very large number of computers</li>
+</ul>
 <p><strong>Concept of relevance and importance</strong><br>Relevance</p>
 <ol>
-<li>involved documents similarity between terms in the query and each document</li>
+<li>Explain three state of the art MM research topicsinvolved documents similarity between terms in the query and each document</li>
 <li>location info, for use of proximity in multi-world search</li>
 <li>in page title, page url important</li>
 <li>font, color also considerd</li>
 </ol>
 <p>Importance: measures documents by their likelihood of being useful to a variety of users. popularity.</p>
 <p><strong>Inverted index</strong><br>• For each word: set of documents where it occurs<br>Take popular word in documents as a term</p>
-<h3 id="page-rank-algorithm"><a href="#page-rank-algorithm" class="headerlink" title="page rank algorithm"></a>page rank algorithm</h3><p>Used to estimate popularity of documents<br>if doc has more links to it, then more findable it is.</p>
+<h3 id="page-rank-algorithm"><a href="#page-rank-algorithm" class="headerlink" title="page rank algorithm"></a>page rank algorithm</h3><ul>
+<li>Used to estimate popularity of documents</li>
+<li>if doc has more links to it, then more findable it is.</li>
+</ul>
 <p><strong>Intuitive model</strong><br>A user:</p>
 <ol>
 <li>starts at a random page on the web</li>
@@ -890,6 +911,20 @@
 <p>Random teleports<br>The google solution for spider traps</p>
 <p><strong>SIngle word query ranking</strong><br>• Assign weights</p>
 <p><strong>Multi-word query ranking</strong><br>Similar to single word but have to use proximity on the document</p>
+<h3 id="Indexing-the-web-goals-Precision"><a href="#Indexing-the-web-goals-Precision" class="headerlink" title="Indexing the web goals: Precision"></a>Indexing the web goals: Precision</h3><p><strong>short queries applied to very large numbers of items leads to large number of hits</strong></p>
+<ul>
+<li>Goal is that the first 10-100 hits should satisify users</li>
+<li>Recall is not an important criterion</li>
+</ul>
+<p>completeness of index is not an important factot, comprehensive crawling is unnecessary</p>
+<h3 id="Precision-and-Recall"><a href="#Precision-and-Recall" class="headerlink" title="Precision and Recall"></a>Precision and Recall</h3><ul>
+<li>Precision is also called ( positive predictive value ) is the fraction of retrieved instanced that are relevant</li>
+<li>Recall (AKA sensitivity), is the fraction of relevent instances that are retrieved</li>
+</ul>
+<h3 id="Relevance-and-Importance"><a href="#Relevance-and-Importance" class="headerlink" title="Relevance and Importance"></a>Relevance and Importance</h3><ul>
+<li>Relevence is considerd as ( Relevant or Not Relevant ), it is usually estimated by the similarity between the terms in the query and each document</li>
+<li>Importance measure </li>
+</ul>
 ]]></content>
       <categories>
         <category>Multimedia Information Systems</category>
@@ -1323,6 +1358,8 @@
 
 
 
+
+
 ]]></content>
       <categories>
         <category>Java Basic</category>
@@ -1718,5 +1755,28 @@
     <title>Pandas Practice Q120</title>
     <url>/2021/02/21/Pandas-Practice-Q120/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>CSE408 midterm prep</title>
+    <url>/2021/01/12/CSE408-midterm-prep/</url>
+    <content><![CDATA[<h2 id="What-is-multimedia"><a href="#What-is-multimedia" class="headerlink" title="What is multimedia?"></a>What is multimedia?</h2><h3 id="Give-examples-of-MM-data"><a href="#Give-examples-of-MM-data" class="headerlink" title="Give examples of MM data"></a>Give examples of MM data</h3><ul>
+<li>combinations of text, sound, images, animation, graphics</li>
+</ul>
+<h3 id="Discuss-a-multimedia-system-you-use-on-one-of-the-following-platforms-mobile-phone-home-PC-TV-Social-media-streaming-video-etc"><a href="#Discuss-a-multimedia-system-you-use-on-one-of-the-following-platforms-mobile-phone-home-PC-TV-Social-media-streaming-video-etc" class="headerlink" title="Discuss a multimedia system you use on one of the following platforms: mobile phone, home PC, TV, Social media, streaming video, etc."></a>Discuss a multimedia system you use on one of the following platforms: mobile phone, home PC, TV, Social media, streaming video, etc.</h3><ul>
+<li>Ex: a web-based video editor that lets anyone create a new video by editing, annotating and reminxing videos on the cloud</li>
+<li>Searching very large video and image databases for target visual objects, using semantics of objects</li>
+</ul>
+<h3 id="Explain-three-state-of-the-art-MM-research-topics"><a href="#Explain-three-state-of-the-art-MM-research-topics" class="headerlink" title="Explain three state of the art MM research topics"></a>Explain three state of the art MM research topics</h3><ul>
+<li>Mutiple views: allowing photo-realistic (video-quality) synthesis of virtual actores from several cameras or from a single camera under different lighting</li>
+<li>Digital fashion: aims to develop smart clothing that can communicate with others such enhanced clothing using wireless communication</li>
+<li>3D motion capture: used for multiple actor capture so that multiple real actores in a virtual studio can be used to automatically produce realistic animated models with natural movement</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Multimedia Information Systems</category>
+      </categories>
+      <tags>
+        <tag>CSE408</tag>
+      </tags>
   </entry>
 </search>
